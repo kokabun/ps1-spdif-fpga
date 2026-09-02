@@ -19,6 +19,9 @@ SCPH-7000 / PU-20 (CXD2925Q)
 
 ## 現在の実装状況
 
+将来構想は[Parallel I/O接続型S/PDIFドングルの設計検討](docs/parallel-io-dongle.md)を参照してください。
+一次資料・第三者の報告・未検証の仮説を分けて整理しています。PIO対応は未実装です。
+
 - 移植可能な16-bit Right-Justified PCM receiver
 - 移植可能な4エントリ asynchronous FIFO
 - IEC 60958 consumer stereo frame generatorおよびBMC出力

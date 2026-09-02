@@ -18,6 +18,10 @@ damage either board. This repository deliberately does not guess those facts.
 
 ## Current state
 
+See the [Parallel I/O S/PDIF dongle design study](docs/parallel-io-dongle.en.md)
+for future plans, with primary evidence, third-party reports, and untested
+hypotheses separated. PIO support is not implemented.
+
 - portable 16-bit right-justified PCM receiver
 - portable 4-entry asynchronous FIFO
 - IEC 60958 consumer stereo frame generator and BMC output
