@@ -1,0 +1,17 @@
+// Verified against Sipeed Tang Nano 9K schematic rev. 3672.
+// J5-5..J5-9 are FPGA pins 25..29 and belong to the 3.3 V I/O banks.
+IO_LOC "ps1_wcko" 25;
+IO_LOC "ps1_bcko" 26;
+IO_LOC "ps1_lrco" 27;
+IO_LOC "ps1_dato" 28;
+IO_LOC "spdif_out" 29;
+IO_PORT "ps1_wcko" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+IO_PORT "ps1_bcko" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+IO_PORT "ps1_lrco" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+IO_PORT "ps1_dato" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+IO_PORT "spdif_out" IO_TYPE=LVCMOS33 DRIVE=8;
+
+IO_LOC "overflow_led" 16;
+IO_LOC "underflow_led" 15;
+IO_PORT "overflow_led" PULL_MODE=UP DRIVE=8;
+IO_PORT "underflow_led" PULL_MODE=UP DRIVE=8;
