@@ -1,5 +1,7 @@
 # PS1 Parallel I/O S/PDIF dongle design study
 
+> Work sequence (2026-09-04): see [direct SPU first, PIO later](direct-to-pio-plan.en.md). Validate the direct connection before moving to PIO. The plan also tracks porting the corrected integration RTL back into this PoC.
+
 [日本語版 / Japanese](parallel-io-dongle.md) · [README](../README.en.md)
 
 Reviewed: 2026-09-03. The Japanese document is authoritative if versions conflict.

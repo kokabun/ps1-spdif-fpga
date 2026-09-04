@@ -1,5 +1,7 @@
 # PS1 S/PDIF FPGA PoC
 
+> 実施順序（2026-09-04）：[SPU直結からPIOへ移行する計画](docs/direct-to-pio-plan.md)を参照してください。まずPIOを使わず直結で検証し、その後にPIOへ移行します。統合版RTLの修正を本PoCへ反映する作業も同計画に記載しています。
+
 [English translation / 英訳](README.en.md)
 
 以下の構成を対象とする概念実証（PoC）です。

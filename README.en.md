@@ -1,5 +1,7 @@
 # PS1 S/PDIF FPGA PoC
 
+> Work sequence (2026-09-04): see [direct SPU first, PIO later](docs/direct-to-pio-plan.en.md). Validate the direct connection before moving to PIO. The plan also tracks porting the corrected integration RTL back into this PoC.
+
 [日本語版 / Japanese](README.md)
 
 Proof of concept for:

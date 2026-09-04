@@ -1,5 +1,7 @@
 # PS1 Parallel I/O接続型S/PDIFドングルの設計検討
 
+> 実施順序（2026-09-04）：[SPU直結からPIOへ移行する計画](direct-to-pio-plan.md)を参照してください。まずPIOを使わず直結で検証し、その後にPIOへ移行します。統合版RTLの修正を本PoCへ反映する作業も同計画に記載しています。
+
 [English translation](parallel-io-dongle.en.md) · [README](../README.md)
 
 調査日：2026-09-03。日本語版を正本とし、競合時は日本語版を優先します。
