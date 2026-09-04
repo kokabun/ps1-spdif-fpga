@@ -1,6 +1,6 @@
 # PS1 S/PDIF FPGA PoC
 
-> Work sequence (2026-09-04): see [direct SPU first, PIO later](docs/direct-to-pio-plan.en.md). Validate the direct connection before moving to PIO. The plan also tracks porting the corrected integration RTL back into this PoC.
+> Work sequence (2026-09-04): see [direct SPU first, PIO later](docs/direct-to-pio-plan.en.md). Validate the direct connection before moving to PIO. The [common RTL fixes](docs/rtl-backport.en.md) have been backported. Hardware remains unverified.
 
 [日本語版 / Japanese](README.md)
 
@@ -30,7 +30,7 @@ hypotheses separated. PIO support is not implemented.
 - exact clock-enable division from expected `384*Fs` WCKO to `128*Fs`
 - Tang Nano 9K top, device selection, and pin constraints
 - self-checking receiver and transmitter testbenches
-- placeholder platform directories for GW1N-1 and GW1NZ-1
+- placeholder platform directories for [GW1N-1](platform/tang_nano_gw1n1/README.en.md) and [GW1NZ-1](platform/tang_nano_1k_gw1nz1/README.en.md)
 
 The 9K platform uses WCKO directly and therefore instantiates no PLL. If WCKO
 is confirmed as 16.9344 MHz (`384 * 44.1 kHz`), a pulse every three WCKO cycles
@@ -95,11 +95,14 @@ a galvanic connection to the Nano 9K:
 6. Only if levels meet the GW1NR 3.3 V bank limits, connect through short wires
    with a common ground. Otherwise design a proper level shifter/buffer first.
 7. Recheck waveforms after connection for loading, ringing, and overshoot.
-8. Confirm S/PDIF output is 5.6448 M transitions/second at the half-bit cadence,
-   and check receiver lock and left/right channel identity.
+8. Confirm the S/PDIF half-bit rate is 5.6448 MHz (approximately 177.15 ns per
+   half-bit), and check receiver lock and left/right channel identity. Actual
+   transition counts depend on data and preambles.
 
 After measurement, update the two parameters in `platform/tang_nano_9k/top.v`
-and add measured clock periods to `tang_nano_9k.sdc`.
+and complete the SDC using [timing and waveform validation](docs/timing-validation.en.md).
+Clock periods alone are insufficient: input delays, FIFO crossings and reset
+paths also require verification.
 
 ## PLT133/T10W (Akizuki 109598)
 
@@ -142,6 +145,11 @@ S/PDIF decoding checks 419 stereo pairs per case, order, alignment, parity,
 preambles, block wrap and invalid/muted underflow. These normalized-clock tests
 do not prove electrical safety, actual synchronization or Gowin timing closure.
 
+Output stability is checked at every recorded TX clock cycle within each
+half-bit. Tests reject corruption at each of its two following cycles and
+accept valid waveforms with changed reset latency. Sub-cycle glitches and
+physical routing delays are outside this test's coverage.
+
 The RX test uses 32-bit slots containing distinct final 16-bit samples. The TX
 test checks frame request cadence and BMC activity. Hardware-level timing and
 optical interoperability still require the measurements above.
@@ -150,9 +158,12 @@ optical interoperability still require the measurements above.
 
 1. Open `platform/tang_nano_9k/ps1_spdif.gprj` in Gowin EDA.
 2. Confirm device `GW1NR-LV9QN88PC6/I5` and top module `top`.
-3. Enter the measured clock periods in `tang_nano_9k.sdc`.
-4. Run **Synthesize**, then **Place & Route**. Do not accept unconstrained-clock
-   warnings for a hardware test.
+3. Follow [timing and waveform validation](docs/timing-validation.en.md) to
+   resolve clock, input-delay and CDC constraints using measurements and actual
+   synthesized node names. The current SDC is an unmeasured template.
+4. Run **Synthesize**, then **Place & Route**. Check clock routing, input
+   setup/hold, FIFO paths, resets and exception coverage. Clearing
+   unconstrained-clock warnings alone is insufficient.
 5. Connect the Nano 9K USB port and open Gowin Programmer.
 6. Scan the JTAG chain, select the generated `.fs`, and use SRAM programming for
    the first reversible test. Use embedded/external flash only after validation.
@@ -180,5 +191,5 @@ crosses the absolute maximum, a level translator is mandatory.
 This original implementation is MIT licensed. The architecture was informed by
 puhitaku/YOTSUHACK's working Tang Nano design. That repository is MIT at top
 level, but its Ultra-Embedded S/PDIF RTL is GPL-2.0-or-later. None of that RTL is
-copied here. See `THIRD_PARTY.md` for the exact provenance and official Sipeed
+copied here. See [sources and licensing](THIRD_PARTY.en.md) for the exact provenance and official Sipeed
 sources.

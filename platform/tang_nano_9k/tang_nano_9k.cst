@@ -13,5 +13,6 @@ IO_PORT "spdif_out" IO_TYPE=LVCMOS33 DRIVE=8;
 
 IO_LOC "overflow_led" 16;
 IO_LOC "underflow_led" 15;
-IO_PORT "overflow_led" PULL_MODE=UP DRIVE=8;
-IO_PORT "underflow_led" PULL_MODE=UP DRIVE=8;
+// Bank 3 is supplied at 1.8 V on the official schematic.
+IO_PORT "overflow_led" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8;
+IO_PORT "underflow_led" IO_TYPE=LVCMOS18 PULL_MODE=UP DRIVE=8;
