@@ -1,4 +1,19 @@
-build/
-impl/
 *.fs
 *.vcd
+
+.DS_Store
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.log
+
+# IDE
+.idea/
+.vscode/
+
+# FPGA build artifacts
+build/
+impl/
+synth/

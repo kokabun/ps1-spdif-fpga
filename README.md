@@ -1,5 +1,7 @@
 # PS1 S/PDIF FPGA PoC
 
+> 実施順序（2026-09-04）：[SPU直結からPIOへ移行する計画](docs/direct-to-pio-plan.md)を参照してください。まずPIOを使わず直結で検証し、その後にPIOへ移行します。[共通RTL修正と検証結果](docs/rtl-backport.md)を本ブランチへ反映しました。実機は未検証です。
+
 [English translation / 英訳](README.en.md)
 
 以下の構成を対象とする概念実証（PoC）です。
@@ -18,6 +20,9 @@ SCPH-7000 / PU-20 (CXD2925Q)
 事項を推測で固定していません。
 
 ## 現在の実装状況
+
+将来構想は[Parallel I/O接続型S/PDIFドングルの設計検討](docs/parallel-io-dongle.md)を参照してください。
+一次資料・第三者の報告・未検証の仮説を分けて整理しています。PIO対応は未実装です。
 
 - 移植可能な16-bit Right-Justified PCM receiver
 - 移植可能な4エントリ asynchronous FIFO
@@ -124,6 +129,12 @@ Icarus Verilogをinstallして、次を実行します。
 ```sh
 make test
 ```
+
+Python 3も必要です。既存単体テストに加え、FIFO容量・満杯・順序・周回・リセットと、
+384Fs固定／受信エッジ2種／左右極性2種／16・32-bitスロットの8条件を検証します。
+各条件で出力S/PDIFのみを復号し、419組の左右PCM、欠落・重複、音声ビット配置、
+パリティ、プリアンブル、ブロック周回、枯渇時の無効フラグと左右ミュートを確認します。
+正規化クロックの論理試験であり、実機電圧・同期・Gowin配置配線を保証しません。
 
 RX testは、末尾16 bitに異なるsampleを格納した32-bit slotを使用します。TX testは
 frame request cadence、Z preamble、BMC activityを確認します。hardware-level timingと

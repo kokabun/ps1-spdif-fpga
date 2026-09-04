@@ -1,5 +1,7 @@
 # PS1 S/PDIF FPGA PoC
 
+> Work sequence (2026-09-04): see [direct SPU first, PIO later](docs/direct-to-pio-plan.en.md). Validate the direct connection before moving to PIO. The plan also tracks porting the corrected integration RTL back into this PoC.
+
 [日本語版 / Japanese](README.md)
 
 Proof of concept for:
@@ -17,6 +19,10 @@ must first be measured on the actual PU-20. A wrong voltage can permanently
 damage either board. This repository deliberately does not guess those facts.
 
 ## Current state
+
+See the [Parallel I/O S/PDIF dongle design study](docs/parallel-io-dongle.en.md)
+for future plans, with primary evidence, third-party reports, and untested
+hypotheses separated. PIO support is not implemented.
 
 - portable 16-bit right-justified PCM receiver
 - portable 4-entry asynchronous FIFO
@@ -128,6 +134,13 @@ Install Icarus Verilog, then run:
 ```sh
 make test
 ```
+
+Python 3 is also required. See [common RTL backport](docs/rtl-backport.en.md).
+Tests now include FIFO capacity/full/order/wrap/reset and eight direct 384Fs
+configurations (both edges, both LRCLK polarities, 16/32-bit slots). External
+S/PDIF decoding checks 419 stereo pairs per case, order, alignment, parity,
+preambles, block wrap and invalid/muted underflow. These normalized-clock tests
+do not prove electrical safety, actual synchronization or Gowin timing closure.
 
 The RX test uses 32-bit slots containing distinct final 16-bit samples. The TX
 test checks frame request cadence and BMC activity. Hardware-level timing and
