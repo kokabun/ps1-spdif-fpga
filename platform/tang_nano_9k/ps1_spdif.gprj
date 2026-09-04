@@ -5,6 +5,7 @@
   <Version>5</Version>
   <Device name="GW1NR-9C" pn="GW1NR-LV9QN88PC6/I5">gw1nr9c-004</Device>
   <FileList>
+    <File path="../../rtl/reset_release.v" type="file.verilog" enable="1"/>
     <File path="../../rtl/ps1_pcm_rx.v" type="file.verilog" enable="1"/>
     <File path="../../rtl/async_fifo.v" type="file.verilog" enable="1"/>
     <File path="../../rtl/spdif_tx.v" type="file.verilog" enable="1"/>

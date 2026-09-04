@@ -1,6 +1,6 @@
 # PS1 S/PDIF FPGA PoC
 
-> 実施順序（2026-09-04）：[SPU直結からPIOへ移行する計画](docs/direct-to-pio-plan.md)を参照してください。まずPIOを使わず直結で検証し、その後にPIOへ移行します。統合版RTLの修正を本PoCへ反映する作業も同計画に記載しています。
+> 実施順序（2026-09-04）：[SPU直結からPIOへ移行する計画](docs/direct-to-pio-plan.md)を参照してください。まずPIOを使わず直結で検証し、その後にPIOへ移行します。[共通RTL修正と検証結果](docs/rtl-backport.md)を本ブランチへ反映しました。実機は未検証です。
 
 [English translation / 英訳](README.en.md)
 
@@ -129,6 +129,12 @@ Icarus Verilogをinstallして、次を実行します。
 ```sh
 make test
 ```
+
+Python 3も必要です。既存単体テストに加え、FIFO容量・満杯・順序・周回・リセットと、
+384Fs固定／受信エッジ2種／左右極性2種／16・32-bitスロットの8条件を検証します。
+各条件で出力S/PDIFのみを復号し、419組の左右PCM、欠落・重複、音声ビット配置、
+パリティ、プリアンブル、ブロック周回、枯渇時の無効フラグと左右ミュートを確認します。
+正規化クロックの論理試験であり、実機電圧・同期・Gowin配置配線を保証しません。
 
 RX testは、末尾16 bitに異なるsampleを格納した32-bit slotを使用します。TX testは
 frame request cadence、Z preamble、BMC activityを確認します。hardware-level timingと

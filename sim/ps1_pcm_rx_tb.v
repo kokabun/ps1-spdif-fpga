@@ -30,6 +30,8 @@ module ps1_pcm_rx_tb;
 
     initial begin
         #125 rst_n = 1;
+        // Discard a startup partial slot before a full left/right pair.
+        slot(1, 32'h0000_0000, 32);
         // 32-bit slots with the 16-bit sample in the final 16 bit positions.
         slot(0, 32'hCAFE_1234, 32);
         slot(1, 32'hBEEF_ABCD, 32);
@@ -39,6 +41,7 @@ module ps1_pcm_rx_tb;
             $display("FAIL frame=%h valid=%0d", observed_frame, observed_valid); errors = errors + 1;
         end
         if (errors == 0) $display("PASS ps1_pcm_rx_tb");
-        $finish(errors != 0);
+        if (errors != 0) $fatal(1, "RX mismatch");
+        $finish;
     end
 endmodule

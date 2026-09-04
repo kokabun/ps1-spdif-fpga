@@ -135,6 +135,13 @@ Install Icarus Verilog, then run:
 make test
 ```
 
+Python 3 is also required. See [common RTL backport](docs/rtl-backport.en.md).
+Tests now include FIFO capacity/full/order/wrap/reset and eight direct 384Fs
+configurations (both edges, both LRCLK polarities, 16/32-bit slots). External
+S/PDIF decoding checks 419 stereo pairs per case, order, alignment, parity,
+preambles, block wrap and invalid/muted underflow. These normalized-clock tests
+do not prove electrical safety, actual synchronization or Gowin timing closure.
+
 The RX test uses 32-bit slots containing distinct final 16-bit samples. The TX
 test checks frame request cadence and BMC activity. Hardware-level timing and
 optical interoperability still require the measurements above.

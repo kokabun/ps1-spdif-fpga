@@ -15,7 +15,7 @@ module spdif_tx_tb;
         if (ready) begin
             if (previous_request >= 0 && cycles - previous_request != 384) begin
                 $display("FAIL request interval=%0d", cycles - previous_request);
-                $finish(1);
+                $fatal(1, "request interval");
             end
             previous_request <= cycles;
             requests <= requests + 1;
@@ -24,7 +24,7 @@ module spdif_tx_tb;
         last_spdif <= spdif;
         if (requests == 5) begin
             if (edges == 0) begin
-                $display("FAIL no BMC transitions"); $finish(1);
+                $fatal(1, "no BMC transitions");
             end
             $display("PASS spdif_tx_tb requests=%0d edges=%0d", requests, edges);
             $finish(0);
@@ -36,7 +36,7 @@ module spdif_tx_tb;
             #1;
             if (spdif !== expected_z[half_count]) begin
                 $display("FAIL Z preamble half=%0d value=%b", half_count, spdif);
-                $finish(1);
+                $fatal(1, "preamble");
             end
             half_count = half_count + 1;
         end

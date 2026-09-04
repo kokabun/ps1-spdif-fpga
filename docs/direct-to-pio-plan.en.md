@@ -12,7 +12,7 @@ RTL synthesis maps the design into FPGA LUTs, registers and other resources. Reu
 
 ## Current implementation boundary
 
-This repository contains the original direct-SPU PoC, assuming 384Fs. The PCB repository has a separate integration branch, `feat/pio-spdif-integration`, commit `793d647`, with corrected FIFO full detection, PCM bit placement, stereo pairing and additional tests. Those fixes have not been ported back into this PoC by this documentation change. Port and re-test them for the direct profile before using it.
+The fixes were absent when this plan was first added. This correction branch now backports common FIFO, PCM alignment, stereo pairing, receiver startup and reset fixes from PCB integration commit `793d647`. Eight direct 384Fs configurations pass external decoding tests. See [scope and verification](rtl-backport.en.md). PIO six-cycle mode and board-specific features are not imported. Hardware validation remains outstanding.
 
 The integration simulations do not demonstrate electrical compatibility, real clock synchronization, Gowin timing closure or optical receiver lock.
 

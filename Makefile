@@ -1,11 +1,12 @@
 IVERILOG ?= iverilog
 VVP ?= vvp
-RTL = rtl/ps1_pcm_rx.v rtl/async_fifo.v rtl/spdif_tx.v rtl/ps1_spdif_core.v
+RTL = rtl/ps1_pcm_rx.v rtl/async_fifo.v rtl/spdif_tx.v rtl/ps1_spdif_core.v rtl/reset_release.v
 
 .PHONY: test clean
 test: build/ps1_pcm_rx_tb build/spdif_tx_tb
 	$(VVP) build/ps1_pcm_rx_tb
 	$(VVP) build/spdif_tx_tb
+	python3 sim/run_regression.py
 
 build/ps1_pcm_rx_tb: sim/ps1_pcm_rx_tb.v $(RTL)
 	mkdir -p build
