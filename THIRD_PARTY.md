@@ -1,25 +1,23 @@
-# Sources and licensing
+# 出典とライセンス
 
-This repository contains an original implementation and does not copy RTL from
-the projects below.
+[English](THIRD_PARTY.en.md) / [README](README.md)
+
+日本語を正本とする。本リポジトリは独自実装を含み、以下のプロジェクトからRTLをコピーしていません。
 
 ## puhitaku / YOTSUHACK `nintendo-switch-i2s-to-spdif`
 
-- Source: https://github.com/puhitaku/nintendo-switch-i2s-to-spdif
-- Consulted for the proven high-level pipeline: serial PCM receiver, dual-clock
-  FIFO, IEC 60958 framing, and S/PDIF output.
-- Repository-level code is MIT licensed (Takumi Sueda, 2020).
-- Its `src/spdif/*.v` files are derived from Ultra-Embedded and explicitly
-  licensed GPL version 2 or later. Those files are **not included or copied**.
-- This project's `spdif_tx.v` is a new implementation from the IEC 60958 frame
-  structure, so this repository is distributed under MIT.
+- [ソース](https://github.com/puhitaku/nintendo-switch-i2s-to-spdif)
+- 動作実績のあるserial PCM receiver、dual-clock FIFO、IEC 60958フレーム生成、S/PDIF出力という全体構成を参考にしました。
+- リポジトリ上位のライセンスはMIT（Takumi Sueda、2020年）です。
+- `src/spdif/*.v`はUltra-Embedded由来で、GPL version 2以降が明記されています。これらのファイルは**同梱もコピーもしていません**。
+- 本プロジェクトの`spdif_tx.v`はIEC 60958のフレーム構造から新規実装しており、本リポジトリはMITで配布します。
 
-## Sipeed Tang Nano 9K official material
+## Sipeed Tang Nano 9K公式資料
 
-- Board page: https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-9K/Nano-9K
-- Official examples: https://github.com/sipeed/TangNano-9K-example
-- Schematic revision 3672:
+- ボード資料: https://wiki.sipeed.com/hardware/en/tang/Tang-Nano-9K/Nano-9K
+- 公式サンプル: https://github.com/sipeed/TangNano-9K-example
+- 回路図（ファイル名3672）:
   https://dl.sipeed.com/fileList/TANG/Nano%209K/2_Schematic/Tang_Nano_9k_3672_Schematic.pdf
 
-The device identifier and board pin constraints were checked against these
-official sources. No Sipeed example source is included.
+device識別子とボードの端子制約は、これらの公式資料に照合しました。
+Sipeedサンプルのソースは同梱していません。照合はGowin配置配線や実機動作の検証を意味しません。

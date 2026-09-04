@@ -30,7 +30,7 @@ SCPH-7000 / PU-20 (CXD2925Q)
 - 想定される`384*Fs` WCKOから`128*Fs`への正確なclock-enable分周
 - Tang Nano 9K用top、device選択、pin constraints
 - 自己検証を行うreceiverおよびtransmitter testbench
-- GW1N-1およびGW1NZ-1向けplatformディレクトリの雛形
+- [GW1N-1](platform/tang_nano_gw1n1/README.md)および[GW1NZ-1](platform/tang_nano_1k_gw1nz1/README.md)向けplatformディレクトリの雛形
 
 9K platformはWCKOを直接使用するため、PLLをインスタンス化しません。WCKOが
 16.9344 MHz（`384 * 44.1 kHz`）であると確認できれば、WCKO 3周期ごとのpulseが
@@ -93,11 +93,12 @@ Nano 9Kと電気的に接続する前に、console側信号をprobeしてくだ�
 6. 信号levelがGW1NRの3.3 V bank制限を満たす場合だけ、共通groundと短い配線で
    接続します。満たさない場合は、先に適切なlevel shifter/bufferを設計します。
 7. 接続後、loading、ringing、overshootによる波形劣化がないか再確認します。
-8. S/PDIF出力のhalf-bit cadenceが5.6448 M回/秒であることを確認し、receiver lockと
-   左右channelの対応も確認します。
+8. S/PDIF出力の半ビットレートが5.6448 MHz（半ビット幅約177.15 ns）であることを確認し、
+   receiver lockと左右channelの対応も確認します。実際の遷移回数はデータとプリアンブルに依存します。
 
-測定後、`platform/tang_nano_9k/top.v`の2つのparameterを更新し、測定したclock periodを
-`tang_nano_9k.sdc`へ追加してください。
+測定後、`platform/tang_nano_9k/top.v`の2つのparameterを更新し、
+[タイミング制約と波形検証](docs/timing-validation.md)に従ってSDCを完成させてください。
+クロック周期だけでなく入力遅延、FIFOのクロックドメイン間経路、resetの確認が必要です。
 
 ## PLT133/T10W（秋月電子 109598）
 
@@ -136,6 +137,10 @@ Python 3も必要です。既存単体テストに加え、FIFO容量・満杯�
 パリティ、プリアンブル、ブロック周回、枯渇時の無効フラグと左右ミュートを確認します。
 正規化クロックの論理試験であり、実機電圧・同期・Gowin配置配線を保証しません。
 
+各TXクロック周期で半ビット内の出力保持も検査します。半ビット内の後続2周期を
+それぞれ壊した波形の拒否と、起動待ち時間を変えた正常波形の受入れを検証します。
+クロック周期より短いグリッチや実配線遅延は、このテストの対象外です。
+
 RX testは、末尾16 bitに異なるsampleを格納した32-bit slotを使用します。TX testは
 frame request cadence、Z preamble、BMC activityを確認します。hardware-level timingと
 光接続の相互運用性については、引き続き上記の実機測定が必要です。
@@ -144,9 +149,10 @@ frame request cadence、Z preamble、BMC activityを確認します。hardware-l
 
 1. Gowin EDAで`platform/tang_nano_9k/ps1_spdif.gprj`を開きます。
 2. deviceが`GW1NR-LV9QN88PC6/I5`、top moduleが`top`であることを確認します。
-3. `tang_nano_9k.sdc`へ測定済みのclock periodを入力します。
-4. **Synthesize**、続いて**Place & Route**を実行します。実機試験では、clockが
-   unconstrainedというwarningを受け入れないでください。
+3. [タイミング制約と波形検証](docs/timing-validation.md)に従い、`tang_nano_9k.sdc`の
+   クロック・入力遅延・CDC制約を実測と合成後のノード名から確定します。現状は未測定テンプレートです。
+4. **Synthesize**、続いて**Place & Route**を実行します。クロック配線資源、入力setup/hold、
+   FIFO経路、reset、例外の適用対象を確認します。unconstrained-clock警告の解消だけでは完了しません。
 5. Nano 9KのUSB portを接続し、Gowin Programmerを開きます。
 6. JTAG chainをscanし、生成された`.fs`を選びます。最初の可逆な試験ではSRAMへの
    programmingを使用してください。内蔵または外部flashは検証後に使用します。
