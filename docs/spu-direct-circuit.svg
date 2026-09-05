@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1280" viewBox="0 0 1280 1280">
+<rect width="1280" height="1280" fill="white"/>
+<style>text{font-family:Arial,'Hiragino Sans',sans-serif;fill:#17212b;font-size:17px}.title{font-size:27px;font-weight:bold}.small{font-size:14px}.warn{fill:#a64000}.wire{fill:none;stroke:#176b5b;stroke-width:2.5}.box{fill:#f5f8fa;stroke:#425569;stroke-width:2}.dot{fill:#176b5b}</style>
+<text x="40" y="40" class="title">SPU直結PoC / Direct SPU PoC — 暫定回路図 Rev.A</text>
+<text x="40" y="70" class="warn">未測定・施工不可 / UNMEASURED: PS1 input interface is NOT released for wiring</text>
+<rect x="40" y="100" width="330" height="230" class="box"/>
+<text x="60" y="130">SCPH-7000 / PU-20 · CXD2925Q</text>
+<rect x="505" y="100" width="275" height="230" fill="#fff4e6" stroke="#b35c00" stroke-width="2" stroke-dasharray="8 5"/>
+<text x="525" y="133" class="warn">保護・レベル変換：TBD</text>
+<text x="525" y="158" class="small">Protection / translation undecided</text>
+<text x="525" y="208" class="small">電圧・負荷・遅延を測定して選定</text>
+<text x="525" y="238" class="small">No bypass wire is specified.</text>
+<rect x="915" y="100" width="320" height="230" class="box"/>
+<text x="935" y="132">Tang Nano 9K · GW1NR-9</text>
+<text x="60" y="180">候補 pin 100 WCKO</text><path d="M370 174 H465 M810 174 H915" class="wire" stroke-dasharray="6 5"/><text x="940" y="180">J5-5 / FPGA 25</text><text x="60" y="213">候補 pin 97 BCKO</text><path d="M370 207 H465 M810 207 H915" class="wire" stroke-dasharray="6 5"/><text x="940" y="213">J5-6 / FPGA 26</text><text x="60" y="246">候補 pin 98 LRCO</text><path d="M370 240 H465 M810 240 H915" class="wire" stroke-dasharray="6 5"/><text x="940" y="246">J5-7 / FPGA 27</text><text x="60" y="279">候補 pin 99 DATO</text><path d="M370 273 H465 M810 273 H915" class="wire" stroke-dasharray="6 5"/><text x="940" y="279">J5-8 / FPGA 28</text>
+<text x="40" y="360" class="small">SPU端子番号は第三者資料の候補。PS1 GNDの導通・電位確認後にNano GNDと共通化。PS1電源は接続しない。</text>
+<text x="40" y="382" class="small">Candidate SPU pins; confirm ground before bonding. Nano is USB powered; no PS1 power-rail connection.</text>
+<text x="40" y="416" class="title">光送信側 / Optical transmitter — proposed 3.3 V circuit</text>
+<rect x="70" y="460" width="170" height="225" class="box"/>
+<text x="85" y="487">J1 · 1×3 header</text>
+<text x="85" y="524">1: Nano 3V3</text>
+<text x="85" y="574">2: Nano GND</text>
+<text x="85" y="624">3: FPGA 29</text>
+<text x="85" y="650" class="small">S/PDIF / J5-9</text>
+<path d="M240 520 H1020 V550 M240 570 H290 V820 H1020 V770 M240 620 H395 M445 620 H900" class="wire"/>
+<circle cx="395" cy="620" r="5" fill="white" stroke="#176b5b" stroke-width="2"/>
+<circle cx="445" cy="620" r="5" fill="white" stroke="#176b5b" stroke-width="2"/>
+<text x="365" y="583">JP1 · OPEN</text><text x="338" y="651" class="small">2-pin + shunt / 手動切離し</text>
+<rect x="900" y="550" width="290" height="220" class="box"/>
+<text x="930" y="584">U1 PLT133/T10W</text>
+<text x="911" y="625">1 Vin</text><text x="1030" y="569">2 Vcc</text>
+<text x="1030" y="754">3 GND</text>
+<text x="940" y="680">4, 5 NC：未接続</text>
+<text x="940" y="711" class="small">Optical → TOSLINK receiver</text>
+<path d="M590 520 V555 M573 555 H607 M573 569 H607 M590 569 V820" class="wire"/>
+<text x="485" y="560">C1</text><text x="480" y="587" class="small">0.1 µF / X7R</text>
+<path d="M730 520 V555 M713 555 H747 M713 569 H747 M730 569 V820" class="wire"/>
+<text x="655" y="550">+</text><text x="665" y="587" class="small">C2 10 µF</text>
+<text x="655" y="610" class="small">50 V / optional</text>
+<path d="M830 620 V687 M830 733 V820" class="wire"/>
+<rect x="818" y="687" width="24" height="46" fill="white" stroke="#176b5b" stroke-width="2.5"/>
+<text x="740" y="703">R1</text><text x="734" y="730">10 kΩ</text>
+<circle cx="590" cy="520" r="4" class="dot"/><circle cx="730" cy="520" r="4" class="dot"/><circle cx="590" cy="820" r="4" class="dot"/><circle cx="730" cy="820" r="4" class="dot"/><circle cx="830" cy="820" r="4" class="dot"/><circle cx="830" cy="620" r="4" class="dot"/>
+<path d="M1020 820 V839 M1000 839 H1040 M1006 847 H1034 M1013 855 H1027" class="wire"/>
+<text x="1060" y="824">GND</text>
+<text x="45" y="881" class="small">● = 接続 / junction. 交差のみは未接続 / crossings without dots are not connected. ピン位置は実装形状ではない。</text>
+<text x="45" y="910">C1はU1のVcc–GND直近。C2の＋は3V3。JP1は初期OPEN、電源OFFで操作。</text>
+<text x="45" y="939" class="small">C1 adjacent to U1; C2 positive to 3V3. JP1 defaults open; change only with power off.</text>
+<text x="45" y="970" class="small">JP1は自動保護ではない。出典・部材・検証条件: docs/spu-direct-build.md / .en.md</text>
+</svg>

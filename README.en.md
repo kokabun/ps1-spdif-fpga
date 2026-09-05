@@ -4,6 +4,8 @@
 
 [日本語版 / Japanese](README.md)
 
+See the [provisional direct-SPU circuit and Akizuki parts](docs/spu-direct-build.en.md). The PS1 interface is unmeasured and not released for wiring.
+
 Proof of concept for:
 
 ```text

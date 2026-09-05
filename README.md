@@ -4,6 +4,8 @@
 
 [English translation / 英訳](README.en.md)
 
+[SPU直結の暫定回路図・秋月購入リスト](docs/spu-direct-build.md)を追加しました。PS1側は未測定・施工不可です。
+
 以下の構成を対象とする概念実証（PoC）です。
 
 ```text
