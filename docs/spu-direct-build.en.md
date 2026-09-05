@@ -8,12 +8,42 @@ Japanese is authoritative. Rev.A. PS1 voltages and waveforms are unmeasured: **t
 
 The upper section is an unresolved interface; the lower section is a proposed optical circuit. The editable SVG is not an EDA schematic, PCB layout or physical pin-view drawing. No ERC or fabrication data is supplied.
 
+## Prototyping-board placement
+
+![Optical-board component and wiring concept](spu-direct-layout.svg)
+
+The [scalable SVG placement drawing](spu-direct-layout.svg) assumes the preferred AE-3G 72×47.5mm board. It is conceptual and does not assign hole coordinates. Put U1 at an edge with the optical connector facing outward, J1 and JP1 at the opposite side, C1 immediately across U1 Vcc–GND, C2 near the power entry, and R1 across Vin–GND.
+
+Use four labeled test points:
+
+| Test point | Net | Measurement |
+|---|---|---|
+| TP1 | 3V3 | Unloaded and active voltage and supply variation |
+| TP2 | GND | Reference for all measurements; keep it close to TP4 for a short probe ground |
+| TP3 | SPDIF_SRC | FPGA side of JP1 |
+| TP4 | SPDIF_VIN | Loaded U1 side of JP1 |
+
+The drawing shows the component view and a see-through solder-side convention. The physical underside reverses left and right, so do not transfer hole positions directly. Treat the net table as authoritative, leave unused holes between signals and avoid crossing bare conductors. Once the exact board is selected, replace this with a hole-numbered drawing based on its dimensions, mounting holes, U1 support pins and J1 orientation.
+
+### Akizuki prototyping-board candidates
+
+The preferred board is **AE-3G**. Its C size leaves room for first-time wiring and test points. Its plated through holes aid inspection from either side, and its 1.6mm FR-4 thickness matches the board thickness in the PLT133/T10W manufacturer's layout example. Matching thickness does not establish support-tab fit.
+
+| Priority | Akizuki product | Specification | Assessment |
+|---|---|---|---|
+| Preferred | [100189 AE-3G plated-through FR-4 C board](https://akizukidenshi.com/catalog/g/g100189/) | 72×47.5×1.6mm, 2.54mm pitch, 1mm holes, 3.2mm mounting holes | Best room for wiring and measurement; assumed by this drawing |
+| Alternative | [103231 plated-through CEM-3 C board](https://akizukidenshi.com/catalog/g/g103231/) | 72×47mm, 2.54mm pitch | Same general size; check the current dimension drawing |
+| Compact option | [108241 AE-D1 single-sided D board](https://akizukidenshi.com/catalog/g/g108241/) | 47×36×1.6mm, 2.54mm pitch, 1mm holes | May fit the circuit, but leaves less room for first-time probing, mounting and wiring |
+
+Prefer isolated pads for this first build; pre-connected grid or power-rail boards add track-cut verification. Buying **two AE-3G boards** is recommended so one can serve for machining practice or recovery. PLT electrical pins are specified as 0.5mm wide, but support tabs have not been confirmed to fit the board's 1mm round holes. Test-fit before soldering; machine holes/slots to the manufacturer's dimensions if required, rather than bending terminals to force a fit.
+
 ## Parts for one optical board
 
-Tang Nano 9K, its USB cable and a separately selected prototyping board are assumed. Verify current stock and pack sizes before purchasing.
+Tang Nano 9K and its USB cable are assumed to be on hand. Verify current stock and pack sizes before purchasing.
 
 | Reference | Akizuki product | Used / suggested purchase | Purpose |
 |---|---|---|---|
+| PCB | [100189 AE-3G plated-through FR-4 C board](https://akizukidenshi.com/catalog/g/g100189/) | 1 / **2 recommended** | 72×47.5×1.6mm, isolated 2.54mm pads; assumed by the placement drawing; test-fit U1 support tabs |
 | U1 | [109598 PLT133/T10W](https://akizukidenshi.com/catalog/g/g109598/) | 1 / 1 | Optical transmitter with driver |
 | C1 | [113582 0.1µF50V X7R, 2.54mm](https://akizukidenshi.com/catalog/g/g113582/) | 1 / pack of 10 | RDER71H104K0P1H03B, leaded decoupling capacitor |
 | C2 | [117897 10µF50V Rubycon PX](https://akizukidenshi.com/catalog/g/g117897/) | 0–1 / 1 | Optional bulk capacitor, positive to 3V3 |
@@ -22,13 +52,13 @@ Tang Nano 9K, its USB cable and a separately selected prototyping board are assu
 | JP1 shunt | [103890 handled 2.54mm jumper](https://akizukidenshi.com/catalog/g/g103890/) | 1 / pack of 20 | Initially removed; operate with power off |
 | Wiring option | [103475 female–female 15cm black](https://akizukidenshi.com/catalog/g/g103475/) | As needed / 1 set | Temporary connections where both boards have male headers |
 | Wiring option | [103476 female–female 15cm blue](https://akizukidenshi.com/catalog/g/g103476/) | As needed / 1 set | Label both ends. 15cm is not a validated high-speed wiring length |
-| Optional test points | [107591 TEST-1(BK)](https://akizukidenshi.com/catalog/g/g107591/) | 3 / pack of 10 | Label 3V3, GND, Vin; header pins can substitute |
+| Recommended test points | [107591 TEST-1(BK)](https://akizukidenshi.com/catalog/g/g107591/) | 4 / pack of 10 | TP1=3V3, TP2=GND, TP3=SPDIF_SRC, TP4=SPDIF_VIN; header pins can substitute |
 | Mounting candidate | [107566 M3 10mm nylon spacer](https://akizukidenshi.com/catalog/g/g107566/) | 4 / 4 | Only if board holes fit; select screws/nuts later |
 | Optional tuning stock | [103941 1/4W 33Ω](https://akizukidenshi.com/catalog/g/g103941/) | 0 / bag of 100 if needed | Not fitted in this circuit; possible source-series resistor near FPGA, subject to waveform testing |
 
 Use existing equivalent parts where possible. C1 uses only one capacitor despite its ten-piece pack. Do not confuse it with SMD or Y5V parts.
 
-Hold purchases of PS1 level translators, buffers, protection and their supplies until measurements. Do not assume generic bidirectional I²C converters suit audio clocks. Select fine SPU wires, connectors and strain relief after inspecting the board; the listed jumpers are not intended for direct attachment to IC legs. Select the prototyping board, screws and nuts together, checking the PLT outline and support pins as well as signal pitch.
+Hold purchases of PS1 level translators, buffers, protection and their supplies until measurements. Do not assume generic bidirectional I²C converters suit audio clocks. Select fine SPU wires, connectors and strain relief after inspecting the board; the listed jumpers are not intended for direct attachment to IC legs. Select screws and nuts for AE-3G's 3.2mm mounting holes and the final installation; these are separate from any machining needed for the PLT support tabs.
 
 A square TOSLINK cable and optical-input DAC/amplifier supporting 44.1kHz stereo PCM are needed, but suitable Akizuki products were not verified in this search. Use existing equipment or another supplier. An optical receiver component alone is not a DAC. Check existing soldering tools and a multimeter separately. No separate external 3.3V supply is proposed.
 
