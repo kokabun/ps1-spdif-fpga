@@ -2,7 +2,7 @@
 
 [日本語](spu-direct-build.md) / [README](../README.en.md) / [Timing validation](timing-validation.en.md)
 
-Japanese is authoritative. Rev.A. PS1 voltages and waveforms are unmeasured: **the SPU interface is not released for wiring**. This procurement plan does not place an order.
+Japanese is authoritative. Rev.A. LRCO/BCKO/MCLK frequencies and one DATO/BCKO acquisition have been measured, but guaranteed voltage, exact DATO timing/bit position and MCLK identity with WCKO remain unresolved: **the SPU interface is not released for wiring**. This procurement plan does not place an order.
 
 ![Provisional direct SPU circuit](spu-direct-circuit.svg)
 
@@ -131,6 +131,9 @@ Record the FPGA configuration, Rs condition, JP1 state, load, measured 3V3, meas
 ### Finalize the PS1 input side after measurement
 
 The existing CST assignments are WCKO (MCLK)=FPGA25/J5-5, BCKO=26/J5-6, LRCO=27/J5-7 and DATO=28/J5-8. They are candidate destinations, not permission to connect the PS1 directly.
+Measurements on 2026-09-06 observed LRCO at 44.097 kHz and BCKO at 2.8225 MHz (approximately 64 Fs). The ConsoleMods-labelled MCLK was photographed at 16.806 MHz and displayed 16.949 MHz immediately beforehand, but nominal 16.9344 MHz, 384 Fs and identity with WCKO remain unconfirmed.
+A single acquisition during audio-CD playback showed DATO transitions near BCKO falling edges, making rising-edge capture the leading candidate; inter-probe skew, exact setup/hold, slot boundaries and bit positions remain unresolved.
+See the [README hardware evidence](../README.en.md#lrco--bcko--dato--mclk-measurement-evidence-2026-09-06) for photographs, conditions and treatment of peak readings.
 Measure PS1 High/Low voltage, frequency, rise/fall time, overshoot, channel polarity, data boundaries and power sequencing before selecting buffers, level translators, protection components and their supplies.
 No particular part, including TC74HC4050AP, is selected yet. Confirm PS1-side ground and pickup points on the actual board and do not jumper around the unresolved interface.
 

@@ -4,7 +4,7 @@
 
 [日本語版 / Japanese](README.md)
 
-See the [provisional direct-SPU circuit and Akizuki parts](docs/spu-direct-build.en.md). The PS1 interface is unmeasured and not released for wiring.
+See the [provisional direct-SPU circuit and Akizuki parts](docs/spu-direct-build.en.md). PS1 measurements have started, but electrical compatibility remains unverified and the interface is not released for wiring.
 
 Proof of concept for:
 
@@ -79,6 +79,68 @@ on the exact PU-20 revision. Do not infer numbering from a board photograph.
 The selected Nano 9K pins 25..29 are exposed on J5-5..J5-9 and are in 3.3 V I/O
 banks in Sipeed's official schematic. This does **not** prove the PS1 signals are
 3.3 V compatible.
+
+### LRCO / BCKO / DATO / MCLK measurement evidence (2026-09-06)
+
+The unit under test is SCPH-7000 / PU-20. The operator reports using the DAC-side LRCK/BCK/MCLK points and the board-ground point pictured in step 5 of the [ConsoleMods 700x guide](https://consolemods.org/wiki/PS1:Digital_Audio_(SPDIF)_Mod).
+This third-party reference and operator report do not establish continuity to CXD2925Q pins or confirmation by Sony primary documentation.
+
+Measurements used a RIGOL DHO914S, a 10X passive probe, DC coupling and no 20 MHz bandwidth limit.
+Before measuring the PS1, the probe-compensation output was observed at approximately 3.076 Vpp with a flat square-wave top.
+The standard long alligator ground lead was connected directly to board ground, so transient peaks may include ground-loop inductance and pickup.
+
+#### LRCO (LRCK in the ConsoleMods guide)
+
+![PU-20 LRCO/LRCK: 44.097 kHz](docs/evidence/pu20-lrck-2026-09-06.png)
+
+| Item | Observation / status |
+|---|---|
+| Frequency | CH1 displays 44.097 kHz after rechecking 10X attenuation. This agrees with the earlier 44.101 kHz observation; **approximately 44.1 kHz is confirmed** |
+| Timebase and acquisition | 5 µs/div, 1.25 GSa/s, 1.00 Mpts, as displayed |
+| Peak readings | Vmax 3.9785 V, Vmin -549.86 mV and Vpp 4.5284 V. Long-ground-lead effects have not been separated, so these are not terminal guarantees |
+| Unresolved | Guaranteed DC High/Low range, transient peaks, channel polarity, slot boundary and FPGA connection suitability |
+
+#### BCKO (BCK in the ConsoleMods guide)
+
+![PU-20 BCKO/BCK: 2.8225 MHz](docs/evidence/pu20-bcko-2026-09-06.png)
+
+| Item | Observation / status |
+|---|---|
+| Frequency | CH2 displays 2.8225 MHz. Its ratio to 44.097 kHz LRCO is approximately 64.01; **approximately 2.8224 MHz / 64 Fs is confirmed** |
+| Timebase and acquisition | 500 ns/div, 1.25 GSa/s, 1.00 Mpts, as displayed |
+| Peak readings | Vmax 3.8388 V, Vmin -398.53 mV and Vpp 4.2373 V. This used an alligator lead directly on board ground and is not a terminal guarantee |
+| Unresolved | Shortest period, duty variation, edges, DATO setup/hold and FPGA connection suitability |
+
+#### DATO (DATA in the ConsoleMods guide) relative to BCKO
+
+CH2=BCKO and CH3=DATO were measured together while playing an audio CD. DATO remained near Low while playback was stopped and began making data transitions after playback started.
+
+![PU-20 BCKO/DATO: DATO transitions near the BCKO falling edge](docs/evidence/pu20-bcko-dato-2026-09-06.png)
+
+| Item | Observation / status |
+|---|---|
+| Observed edge relationship | In this acquisition, DATO transitions occur near BCKO falling edges and DATO appears stable near BCKO rising edges. **BCKO rising-edge capture is the leading candidate**, but this single acquisition does not establish it conclusively |
+| Timebase and acquisition | 100 ns/div, 625 MSa/s, 1.00 Mpts, 12 bit, CH2/CH3 at 1 V/div, CH2 rising-edge trigger at 1.5 V and 10X probes, from the display and operator confirmation |
+| BCKO readings | 2.8248 MHz, Vmax 3.6416 V, Vmin -301.60 mV and Vpp 3.9432 V |
+| DATO readings | Vmax 3.6469 V, Vmin -262.13 mV and Vpp 3.9090 V |
+| Unresolved | Inter-probe skew, exact setup/hold, channel polarity, slot boundary, 16-bit Right-Justified bit position and FPGA connection suitability |
+
+Long-ground-lead effects may be present in the voltage readings and apparent edge shapes, so they are not terminal guarantees or evidence that a direct connection is safe.
+
+#### MCLK in the ConsoleMods guide (WCKO candidate)
+
+![PU-20 MCLK: 16.806 MHz](docs/evidence/pu20-mclk-2026-09-06.png)
+
+| Item | Observation / status |
+|---|---|
+| Frequency | CH4 displays 16.806 MHz in the published photograph; 16.949 MHz was displayed immediately beforehand in the same measurement session. The latest ratios are approximately 381.11 to LRCO and 5.954 to BCKO. They are **close to the 384 Fs / six-times-BCKO candidate, but do not confirm the exact ratios** |
+| Timebase and acquisition | 50 ns/div, 1.25 GSa/s, 1.00 Mpts, 12 bit, CH4 at 1 V/div and a 10X probe, from the display and operator confirmation |
+| Peak readings | Vmax 3.8732 V, Vmin -488.40 mV and Vpp 4.3616 V. Long-ground-lead effects and the visible ringing have not been separated, so these are not terminal guarantees |
+| Unresolved | Cause of the difference between 16.806 MHz and the preceding 16.949 MHz observation, agreement with nominal 16.9344 MHz, exact synchronization/phase to LRCO/BCKO, continuity to CXD2925Q pin 100 WCKO and FPGA connection suitability |
+
+The MCLK measurement supports the ConsoleMods pickup as a candidate for the current RTL's WCKO input, but does not confirm 384 Fs or provide primary evidence that both names identify the same net.
+These are hardware observations of frequency and ratio, not proof of 3.3 V compatibility or permission for direct connection.
+The public PNG files were re-encoded from HEIC without carrying over EXIF/XMP capture metadata.
 
 ### Oscilloscope checklist
 

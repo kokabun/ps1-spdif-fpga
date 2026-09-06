@@ -4,7 +4,7 @@
 
 [English translation / 英訳](README.en.md)
 
-[SPU直結の暫定回路図・秋月購入リスト](docs/spu-direct-build.md)を追加しました。PS1側は未測定・施工不可です。
+[SPU直結の暫定回路図・秋月購入リスト](docs/spu-direct-build.md)を追加しました。PS1側の測定を開始しましたが、電気的な適合性は未確認・施工不可です。
 
 以下の構成を対象とする概念実証（PoC）です。
 
@@ -79,6 +79,68 @@ ICの向きと導通を確認してください。基板写真だけからpin番
 選択したNano 9Kのpin 25〜29はJ5-5〜J5-9へ引き出されており、Sipeed公式回路図では
 3.3 V I/O bankに属します。ただし、これはPS1側信号が3.3 V互換であることを証明する
 ものではありません。
+
+### LRCO / BCKO / DATO / MCLK測定のエビデンス（2026-09-06）
+
+対象はSCPH-7000 / PU-20。測定者申告の取り出し点は、[ConsoleModsの700x向け手順](https://consolemods.org/wiki/PS1:Digital_Audio_(SPDIF)_Mod)にあるDAC側LRCK/BCK/MCLK点と、手順5の写真で示された基板GND点。
+この第三者資料と測定者申告は、CXD2925Q端子までの導通確認やSony一次資料による確定とは区別する。
+
+測定にはRIGOL DHO914S、10X passive probe、DC coupling、20 MHz bandwidth limit OFFを使用した。
+測定前に本体のprobe compensation outputを測定し、約3.076 Vpp、平坦な矩形波を確認した。
+PS1測定時のGNDは標準の長いワニ口leadで基板GNDへ接続したため、過渡peakにはground-loop inductanceとpickupの影響が含まれ得る。
+
+#### LRCO（ConsoleMods表記LRCK）
+
+![PU-20 LRCO/LRCK測定：44.097 kHz](docs/evidence/pu20-lrck-2026-09-06.png)
+
+| 項目 | 確認内容・状態 |
+|---|---|
+| 周波数 | 10X再確認後のCH1表示44.097 kHz。先行測定44.101 kHzとも整合し、**約44.1 kHzを確認済み**とする |
+| 時間軸・取得設定 | 5 µs/div、1.25 GSa/s、1.00 Mpts（写真表示） |
+| peak読値 | Vmax 3.9785 V、Vmin -549.86 mV、Vpp 4.5284 V。長いground leadの影響を分離できておらず、端子保証値には使用しない |
+| 未確定 | DC High/Low保証範囲、過渡peak、左右極性、slot境界、FPGA接続可否 |
+
+#### BCKO（ConsoleMods表記BCK）
+
+![PU-20 BCKO/BCK測定：2.8225 MHz](docs/evidence/pu20-bcko-2026-09-06.png)
+
+| 項目 | 確認内容・状態 |
+|---|---|
+| 周波数 | CH2表示2.8225 MHz。LRCO 44.097 kHzとの比は約64.01で、**約2.8224 MHz / 64 Fsを確認済み**とする |
+| 時間軸・取得設定 | 500 ns/div、1.25 GSa/s、1.00 Mpts（写真表示） |
+| peak読値 | Vmax 3.8388 V、Vmin -398.53 mV、Vpp 4.2373 V。基板GND直結のワニ口lead測定であり、端子保証値には使用しない |
+| 未確定 | 最短周期、duty variation、edge、DATOとのsetup/hold、FPGA接続可否 |
+
+#### DATO（ConsoleMods表記DATA）とBCKOのエッジ関係
+
+音楽CD再生中にCH2=BCKO、CH3=DATOを同時測定した。停止中はDATOがLow付近に留まり、再生開始後にdata遷移を確認した。
+
+![PU-20 BCKO/DATO測定：DATOはBCKO立下り付近で遷移](docs/evidence/pu20-bcko-dato-2026-09-06.png)
+
+| 項目 | 確認内容・状態 |
+|---|---|
+| 観測したエッジ関係 | この取得ではDATO遷移がBCKO立下り付近にあり、BCKO立上り付近ではDATOが安定して見える。**BCKO立上りcaptureを第一候補**とするが、単一取得での観測であり確定しない |
+| 時間軸・取得設定 | 100 ns/div、625 MSa/s、1.00 Mpts、12 bit、CH2/CH3 1 V/div、CH2立上り1.5 V trigger、10X probe（写真表示と測定者確認） |
+| BCKO読値 | 2.8248 MHz、Vmax 3.6416 V、Vmin -301.60 mV、Vpp 3.9432 V |
+| DATO読値 | Vmax 3.6469 V、Vmin -262.13 mV、Vpp 3.9090 V |
+| 未確定 | probe間skew、正確なsetup/hold、左右極性、slot境界、16-bit Right-Justifiedのbit位置、FPGA接続可否 |
+
+電圧読値と見かけのedge形状には長いground leadの影響が含まれ得るため、端子保証値や直結可否には使用しない。
+
+#### ConsoleMods表記MCLK（WCKO候補）
+
+![PU-20 MCLK測定：16.806 MHz](docs/evidence/pu20-mclk-2026-09-06.png)
+
+| 項目 | 確認内容・状態 |
+|---|---|
+| 周波数 | 掲載写真のCH4表示16.806 MHz。直前の同一測定セッションでは16.949 MHzも表示された。最新値のLRCO比は約381.11、BCKO比は約5.954で、**約384 Fs / BCKOの約6倍という候補には近いが、正確な比は未確定** |
+| 時間軸・取得設定 | 50 ns/div、1.25 GSa/s、1.00 Mpts、12 bit、CH4 1 V/div、10X probe（写真表示と測定者確認） |
+| peak読値 | Vmax 3.8732 V、Vmin -488.40 mV、Vpp 4.3616 V。長いground leadと写真に見えるringingの影響を分離できず、端子保証値には使用しない |
+| 未確定 | 16.806 MHzと直前値16.949 MHzの差の原因、公称16.9344 MHzとの一致、LRCO/BCKOとの正確な同期・位相、CXD2925Q pin 100 WCKOとの導通、FPGA接続可否 |
+
+MCLK測定は、ConsoleModsの取り出し点が現行RTLのWCKO入力として機能する候補であることを支持するが、384 Fsの確定や、WCKOと同一netであることの一次確認にはならない。
+以上は周波数と比率の実機観測記録であり、3.3 V互換や直結可能の証拠ではない。
+公開用PNGはHEICを再encodeし、EXIF/XMP等の撮影metadataを引き継がないようにした。
 
 ### オシロスコープでの確認項目
 
