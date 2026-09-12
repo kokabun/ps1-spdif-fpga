@@ -6,6 +6,8 @@ Japanese is authoritative. Rev.A. LRCO/BCKO/MCLK frequencies and one DATO/BCKO a
 
 ![Provisional direct SPU circuit](spu-direct-circuit.svg)
 
+2026-09-10: See the [input-interface proposal](ps1-input-interface.en.md) for the 74LCX541FT candidate, logical connections and remaining electrical conditions. It develops the input TBD in the existing diagrams but does not release PS1 wiring. Audio format validation may continue during FPGA capture after electrical qualification.
+
 The upper section is an unresolved interface; the lower section is a proposed optical circuit. The editable SVG is not an EDA schematic, PCB layout or physical pin-view drawing. No ERC or fabrication data is supplied.
 
 ## Prototyping-board placement
@@ -134,7 +136,7 @@ The existing CST assignments are WCKO (MCLK)=FPGA25/J5-5, BCKO=26/J5-6, LRCO=27/
 Measurements on 2026-09-06 observed LRCO at 44.097 kHz and BCKO at 2.8225 MHz (approximately 64 Fs). The ConsoleMods-labelled MCLK was photographed at 16.806 MHz and displayed 16.949 MHz immediately beforehand, but nominal 16.9344 MHz, 384 Fs and identity with WCKO remain unconfirmed.
 A single acquisition during audio-CD playback showed DATO transitions near BCKO falling edges, making rising-edge capture the leading candidate; inter-probe skew, exact setup/hold, slot boundaries and bit positions remain unresolved.
 See the [README hardware evidence](../README.en.md#lrco--bcko--dato--mclk-measurement-evidence-2026-09-06) for photographs, conditions and treatment of peak readings.
-Measure PS1 High/Low voltage, frequency, rise/fall time, overshoot, channel polarity, data boundaries and power sequencing before selecting buffers, level translators, protection components and their supplies.
+Qualify the input interface using PS1 High/Low voltage, transients including negative excursions, input slew and power sequencing. The linked proposal makes 74LCX541FT the leading candidate. Channel polarity and data boundaries can be resolved during FPGA capture after electrical qualification.
 No particular part, including TC74HC4050AP, is selected yet. Confirm PS1-side ground and pickup points on the actual board and do not jumper around the unresolved interface.
 
 The existing SVG files remain the optical-board placement and circuit drawings. This section is authoritative for the additional breadboard PoC wiring.
@@ -164,6 +166,6 @@ The manufacturer requires Vin and Vcc to power down together. JP1 defaults OPEN.
 
 ## Completing the SPU interface
 
-CXD2925Q pins 97/98/99/100 are candidates from [third-party pin information](https://psx-spx.consoledev.net/pinouts/), not confirmed here by Sony documentation or continuity testing. Establish safe PU-20 pickup points and ground without working on its mains power board. Measure voltage, clocks, edges, polarity and RJ boundaries before soldering signal leads. Then select the interface, wiring and constraints; no pre-measurement bypass is specified.
+CXD2925Q pins 97/98/99/100 are candidates from [third-party pin information](https://psx-spx.consoledev.net/pinouts/), not confirmed here by Sony documentation or continuity testing. Establish PU-20 pickup points and ground without working on its mains power board. Qualify interface voltages, transients and power conditions before FPGA connection; polarity and RJ boundaries may then be verified during capture. Finalize wiring and protection from electrical evidence and update CST/SDC from measurements and synthesis. Do not bypass an unqualified interface.
 
 Nano pins follow the [existing CST](../platform/tang_nano_9k/tang_nano_9k.cst) and [official Sipeed schematic](https://dl.sipeed.com/fileList/TANG/Nano%209K/2_Schematic/Tang_Nano_9k_3672_Schematic.pdf). Clock routing still requires place-and-route verification. Before powering the optical board, check polarity, physical pin orientation, shorts, NC pins and open JP1. Optical-board testing does not authorize connection to an unmeasured PS1.

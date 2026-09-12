@@ -15,10 +15,7 @@ SCPH-7000 / PU-20 (CXD2925Q)
         -> Akizuki 109598 (Everlight PLT133/T10W)
 ```
 
-**Do not connect the PlayStation to the FPGA yet.** The CXD2925Q signal voltage,
-sampling edge, LRCK polarity, slot length, and exact right-justified boundary
-must first be measured on the actual PU-20. A wrong voltage can permanently
-damage either board. This repository deliberately does not guess those facts.
+**Do not connect the PlayStation to the FPGA yet.** The [input-interface proposal](docs/ps1-input-interface.en.md) selects 74LCX541FT as the leading candidate, but negative excursions, input slew and supply transitions remain unverified. Establish electrical compatibility before connection. Channel polarity and Right-Justified bit positions can then be resolved during FPGA capture; they are separate from electrical connection prerequisites.
 
 ## Current state
 
