@@ -10,14 +10,29 @@ Measure at the FPGA inputs through the final buffers and cables, using an oscill
 
 | Item | Status | Use |
 |---|---|---|
-| WCKO period, shortest period, duty cycle, variation | TBD; 384Fs is a hypothesis | `create_clock`, optional `-waveform`, uncertainty |
-| BCKO period, shortest period, duty cycle, variation | TBD | `create_clock`, optional `-waveform`, uncertainty |
-| DATO launch reference edge and earliest/latest arrival | TBD | BCKO-relative `set_input_delay -min/-max` |
-| LRCO launch reference edge and earliest/latest arrival | TBD | Separate `set_input_delay -min/-max` |
+| WCKO period, shortest period, duty cycle, variation | 16.806 MHz photographed and 16.949 MHz observed immediately beforehand at the ConsoleMods-labelled MCLK point; identity with WCKO, 384 Fs, shortest period, duty and variation are TBD | `create_clock`, optional `-waveform`, uncertainty |
+| BCKO period, shortest period, duty cycle, variation | 2.8225 MHz observed; shortest period, duty and variation TBD | `create_clock`, optional `-waveform`, uncertainty |
+| DATO launch reference edge and earliest/latest arrival | A single acquisition during audio playback showed DATO transitions near BCKO falling edges; rising-edge capture is the leading candidate. Inter-probe skew and exact setup/hold are TBD | BCKO-relative `set_input_delay -min/-max` |
+| LRCO frequency, launch reference edge and earliest/latest arrival | 44.097 kHz observed; edge/timing TBD | Separate `set_input_delay -min/-max` |
 | LRCO polarity, slot boundary, capture edge | TBD | Top parameters, stimulus, STA capture edge |
-| WCKO/BCKO ratio, phase relationship, stop/restart behavior | TBD | Clock relationship model and sustained testing |
+| WCKO/BCKO ratio, phase relationship, stop/restart behavior | Latest MCLK/BCKO ratio approximately 5.954; preceding value approximately 6.005. Exact ratio, phase, synchronization and stop/restart behavior are TBD | Clock relationship model and sustained testing |
 
 Include data/clock routing differences, buffer delay, measurement error and variation margins. `-clock_fall` selects the input-delay reference edge, independently of the RTL capture edge. Check that synthesis recognizes the inverted RX clock when using negative-edge capture. Typical measurements alone are not guaranteed bounds for every operating condition.
+
+On 2026-09-06, a DHO914S measurement of the ConsoleMods-labelled LRCK/BCK/MCLK points on an
+SCPH-7000 / PU-20 observed LRCO at 44.097 kHz, BCKO at 2.8225 MHz and an LRCO/BCKO ratio of
+approximately 64.01. MCLK displayed 16.806 MHz in the published photograph and 16.949 MHz
+immediately beforehand. It is therefore recorded as an approximately 16.8--16.95 MHz clock
+candidate; nominal 16.9344 MHz, 384 Fs and an exact 6:1 relationship to BCKO remain unconfirmed.
+See the [README hardware evidence](../README.en.md#lrco--bcko--dato--mclk-measurement-evidence-2026-09-06)
+for photographs and conditions. The LRCO/BCKO frequencies and 64 Fs relationship are treated as
+confirmed, but peak voltages observed with the long alligator ground lead are not FPGA terminal
+guarantees or evidence that a direct connection is safe.
+
+In a single acquisition during audio-CD playback on the same date, DATO transitioned near BCKO
+falling edges and appeared stable near rising edges. BCKO rising-edge capture is therefore the
+current RTL candidate. Long-ground-lead effects, inter-probe skew and the limited acquisition set
+remain, so exact setup/hold, capture edge, slot boundaries and Right-Justified bit positions are TBD.
 
 ## FIFO and reset clock-domain crossings
 

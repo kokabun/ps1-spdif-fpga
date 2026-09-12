@@ -12,17 +12,30 @@
 
 | 項目 | 現状 | 制約への反映 |
 |---|---|---|
-| WCKO周期・最短周期・デューティ比・変動 | TBD。384Fsは仮説 | `create_clock`、必要なら`-waveform`、クロック余裕 |
-| BCKO周期・最短周期・デューティ比・変動 | TBD | `create_clock`、必要なら`-waveform`、クロック余裕 |
-| DATOの送出基準エッジ、最早/最遅到着時刻 | TBD | BCKO基準の`set_input_delay -min/-max` |
-| LRCOの送出基準エッジ、最早/最遅到着時刻 | TBD | DATOとは別に`set_input_delay -min/-max` |
+| WCKO周期・最短周期・デューティ比・変動 | ConsoleMods表記MCLKで16.806 MHzを撮影、直前に16.949 MHzも観測。WCKO同一性、384 Fs、最短周期・duty・変動はTBD | `create_clock`、必要なら`-waveform`、クロック余裕 |
+| BCKO周期・最短周期・デューティ比・変動 | 2.8225 MHzを実測。最短周期・duty・変動はTBD | `create_clock`、必要なら`-waveform`、クロック余裕 |
+| DATOの送出基準エッジ、最早/最遅到着時刻 | 音楽再生中の単一取得ではBCKO立下り付近でDATO遷移を観測。立上りcaptureが第一候補。probe間skewと正確なsetup/holdはTBD | BCKO基準の`set_input_delay -min/-max` |
+| LRCOの周波数、送出基準エッジ、最早/最遅到着時刻 | 44.097 kHzを実測。edge/timingはTBD | DATOとは別に`set_input_delay -min/-max` |
 | LRCO極性、スロット境界、受信エッジ | TBD | topのパラメータ、テスト入力、STAの捕捉エッジ |
-| WCKO/BCKOの周波数比・位相関係・停止/再開 | TBD | クロック間関係のモデル、連続運転試験 |
+| WCKO/BCKOの周波数比・位相関係・停止/再開 | MCLK/BCKO比は最新値で約5.954、直前値で約6.005。正確な比・位相・同期・停止/再開はTBD | クロック間関係のモデル、連続運転試験 |
 
 最早/最遅値には信号とクロックの配線差、バッファ遅延、測定誤差、変動の余裕を含める。
 `-clock_fall`は入力遅延の基準を立下りにする指定であり、RTLの受信エッジ選択とは別。
 負エッジ受信時は合成後の反転クロックが正しく認識されていることも確認する。
 測定した典型波形だけを全動作条件の保証値としない。
+
+2026-09-06にSCPH-7000 / PU-20のConsoleMods表記LRCK/BCK/MCLK取り出し点をDHO914Sで測定し、
+LRCO 44.097 kHz、BCKO 2.8225 MHz、LRCO/BCKO比約64.01を観測した。MCLKは掲載写真で
+16.806 MHz、その直前に16.949 MHzを表示したため、約16.8～16.95 MHzのクロック候補として扱い、
+公称16.9344 MHz、384 Fs、BCKOとの正確な6:1関係はまだ確定しない。詳細条件と写真は
+[READMEの実機測定記録](../README.md#lrco--bcko--dato--mclk測定のエビデンス2026-09-06)を参照する。
+LRCO/BCKOの周波数と64 Fs関係は確認済みとするが、長いワニ口ground leadで観測したpeak電圧を
+FPGA端子の保証値や直結可否には使用しない。
+
+同日の音楽CD再生中の単一取得では、DATOがBCKO立下り付近で遷移し、立上り付近で安定して見えた。
+したがって現時点のRTL候補はBCKO立上りcaptureとする。ただし、長いground lead、probe間skew、
+取得例の少なさが残るため、正確なsetup/hold、capture edge、slot境界、Right-Justifiedのbit位置は
+引き続きTBDとする。
 
 ## FIFO・resetのクロックドメイン間確認
 

@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1000" viewBox="0 0 1500 1000">
+<rect width="1500" height="1000" fill="#ffffff"/>
+<defs>
+  <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#176b5b"/></marker>
+</defs>
+<style>
+text{font-family:Arial,'Hiragino Sans',sans-serif;fill:#17212b;font-size:17px}
+.title{font-size:29px;font-weight:bold}.sub{font-size:21px;font-weight:bold}.small{font-size:14px}
+.warn{fill:#a64000;font-weight:bold}.box{fill:#f5f8fa;stroke:#425569;stroke-width:2}
+.nano{fill:#fff0ef;stroke:#9d5149;stroke-width:2}.bread{fill:#fffdf1;stroke:#a77b13;stroke-width:2}
+.opt{fill:#eef7ff;stroke:#3f6f91;stroke-width:2}.wire{fill:none;stroke:#176b5b;stroke-width:3}
+.power{fill:none;stroke:#d23b32;stroke-width:3}.gnd{fill:none;stroke:#243746;stroke-width:3}
+.dash{fill:none;stroke:#758391;stroke-width:2.5;stroke-dasharray:8 6}.dot{fill:#176b5b}
+.tp{fill:#fff4c7;stroke:#9b6b00;stroke-width:2}.note{fill:#f8fafc;stroke:#aab7c4;stroke-width:1.5}
+</style>
+
+<text x="45" y="48" class="title">PS1 SPU → S/PDIF PoC（Tang Nano 9K・ブレッドボード検証版）</text>
+<text x="45" y="80" class="warn">PS1入力は未接続。これは穴番号・部品の表裏を指定する施工図ではない。</text>
+<text x="45" y="107" class="small">電源はNanoの3V3のみ。USB 5Vを光送信基板へ接続しない。配線変更とJP1操作は必ず電源OFFで行う。</text>
+
+<rect x="55" y="145" width="380" height="440" rx="8" class="nano"/>
+<text x="145" y="181" class="sub">Tang Nano 9K</text>
+<text x="143" y="207" class="small">GW1NR-9 / top view concept</text>
+<rect x="145" y="245" width="200" height="145" rx="5" class="box"/>
+<text x="205" y="292" class="sub">FPGA</text>
+<text x="175" y="326">spdif_out</text>
+<text x="175" y="355" class="small">LVCMOS33 / DRIVE=8</text>
+<line x1="345" y1="320" x2="435" y2="320" class="wire"/>
+<text x="290" y="311" class="small">FPGA29</text>
+<text x="355" y="345" class="small">J5-9</text>
+<line x1="345" y1="435" x2="435" y2="435" class="power"/>
+<text x="280" y="441">3V3</text>
+<line x1="345" y1="520" x2="435" y2="520" class="gnd"/>
+<text x="285" y="526">GND</text>
+
+<rect x="485" y="145" width="580" height="440" rx="8" class="bread"/>
+<text x="665" y="181" class="sub">EIC-801 ブレッドボード</text>
+<text x="515" y="207" class="small">実際の電源レール分断・穴の導通はテスターで確認</text>
+
+<path d="M435 320 H500" class="wire"/>
+<circle cx="500" cy="320" r="8" class="tp"/><text x="475" y="295" class="small">TP-A</text>
+<path d="M508 320 H565" class="wire"/>
+<rect x="565" y="288" width="145" height="64" rx="6" class="box"/>
+<text x="584" y="315">短絡ジャンパー</text>
+<text x="590" y="340" class="small">または Rs=33Ω</text>
+<path d="M710 320 H758" class="wire"/>
+<circle cx="766" cy="320" r="8" class="tp"/><text x="741" y="295" class="small">TP-B</text>
+<path d="M774 320 H830" class="wire"/>
+<circle cx="838" cy="320" r="8" class="tp"/><text x="813" y="295" class="small">TP3</text>
+<path d="M846 320 H895" class="wire"/>
+<circle cx="895" cy="320" r="7" fill="#fff" stroke="#176b5b" stroke-width="2"/>
+<circle cx="955" cy="320" r="7" fill="#fff" stroke="#176b5b" stroke-width="2"/>
+<text x="876" y="278">JP1</text><text x="869" y="300" class="small">初期OPEN</text>
+<path d="M962 320 H1010" class="wire"/>
+<circle cx="1018" cy="320" r="8" class="tp"/><text x="994" y="295" class="small">TP4</text>
+<path d="M1026 320 H1120" class="wire" marker-end="url(#arrow)"/>
+<text x="770" y="370" class="small">SPDIF_SRC</text>
+<text x="966" y="370" class="small">SPDIF_VIN</text>
+
+<path d="M1018 328 V390" class="wire"/>
+<rect x="1003" y="390" width="30" height="68" fill="#fff" stroke="#176b5b" stroke-width="2.5"/>
+<path d="M1018 458 V493" class="gnd"/>
+<path d="M994 493 H1042 M1001 501 H1035 M1009 509 H1027" class="gnd"/>
+<text x="950" y="414">R1</text><text x="942" y="440">10kΩ</text>
+
+<path d="M435 435 H1090" class="power"/>
+<circle cx="720" cy="435" r="4" fill="#d23b32"/><circle cx="850" cy="435" r="4" fill="#d23b32"/>
+<text x="455" y="425" class="small">Nano 3V3</text>
+<path d="M720 435 V466" class="power"/><path d="M702 466 H738 M702 482 H738" class="wire"/>
+<path d="M720 482 V512" class="gnd"/><path d="M696 512 H744 M703 520 H737 M711 528 H729" class="gnd"/>
+<text x="648" y="477">C1 0.1µF</text><text x="649" y="497" class="small">必須・U1直近</text>
+<path d="M850 435 V466" class="power"/><path d="M832 466 H868 M832 482 H868" class="wire"/>
+<path d="M850 482 V512" class="gnd"/><path d="M826 512 H874 M833 520 H867 M841 528 H859" class="gnd"/>
+<text x="875" y="473">C2 10µF</text><text x="875" y="495" class="small">任意・＋は3V3</text>
+<text x="840" y="457" class="small">＋</text>
+<path d="M435 520 H550" class="gnd"/><path d="M526 520 H574 M533 528 H567 M541 536 H559" class="gnd"/>
+<text x="455" y="549" class="small">共通GND</text>
+
+<rect x="1120" y="205" width="325" height="340" rx="8" class="opt"/>
+<text x="1180" y="241" class="sub">U1 PLT133/T10W</text>
+<text x="1212" y="270" class="small">3.3V動作・光送信</text>
+<line x1="1120" y1="320" x2="1160" y2="320" class="wire"/>
+<text x="1168" y="326">1 Vin</text>
+<path d="M1090 435 H1120" class="power"/><text x="1168" y="441">2 Vcc</text>
+<path d="M1120 500 H1090 V520" class="gnd"/><path d="M1066 520 H1114 M1073 528 H1107 M1081 536 H1099" class="gnd"/>
+<text x="1168" y="506">3 GND</text>
+<text x="1168" y="539" class="small">4 / 5 NC：未接続</text>
+<rect x="1305" y="300" width="92" height="82" rx="4" fill="#fff" stroke="#3f6f91" stroke-width="2"/>
+<path d="M1329 327 H1368 M1348 327 V357 M1334 357 H1362" class="wire"/>
+<path d="M1400 341 H1450" class="wire" marker-end="url(#arrow)"/>
+<text x="1322" y="410" class="small">TOSLINK</text>
+
+<rect x="55" y="625" width="640" height="245" rx="8" fill="#fff4f2" stroke="#a64000" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="80" y="662" class="sub">PS1 / PU-20 SPU側（未接続・未測定）</text>
+<text x="80" y="704">WCKO候補 → FPGA25 / J5-5</text>
+<text x="80" y="738">BCKO候補 → FPGA26 / J5-6</text>
+<text x="80" y="772">LRCO候補 → FPGA27 / J5-7</text>
+<text x="80" y="806">DATO候補 → FPGA28 / J5-8</text>
+<path d="M410 697 H620 M410 731 H620 M410 765 H620 M410 799 H620" class="dash"/>
+<path d="M625 687 L645 707 M645 687 L625 707 M625 721 L645 741 M645 721 L625 741 M625 755 L645 775 M645 755 L625 775 M625 789 L645 809 M645 789 L625 809" stroke="#a64000" stroke-width="3"/>
+<text x="80" y="847" class="warn">電圧・エッジ・取り出し点・保護／レベル変換を確定するまで接続しない</text>
+
+<rect x="735" y="625" width="710" height="245" rx="8" class="note"/>
+<text x="760" y="662" class="sub">測定順序</text>
+<text x="760" y="701">1. PS1を外し、JP1 OPENでNanoの端子・3V3・GNDを確認</text>
+<text x="760" y="738">2. 電源OFFで光基板を接続し、TP1–TP4と短絡を確認</text>
+<text x="760" y="775">3. 有効な検証信号で短絡ジャンパーとRs=33Ωを同条件比較</text>
+<text x="760" y="812">4. High/Low、立上り/立下り、overshoot、undershoot、ringingを記録</text>
+<text x="760" y="849" class="warn">33Ωは任意の比較値であり、レベル変換・過電圧保護ではない</text>
+
+<text x="55" y="920" class="small">正本: docs/spu-direct-build.md　●付き交点のみ電気接続。ネット名が同じGNDは共通。</text>
+<text x="55" y="948" class="small">PLT133/T10W: pin 1=Vin, 2=Vcc, 3=GND, 4/5=NC。C1はU1電源端子直近に配置する。</text>
+</svg>

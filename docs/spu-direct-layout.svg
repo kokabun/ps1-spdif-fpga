@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1050" viewBox="0 0 1500 1050">
+<rect width="1500" height="1050" fill="#fff"/>
+<defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="#b8c2cc"/></pattern></defs>
+<style>
+text{font-family:Arial,'Hiragino Sans',sans-serif;fill:#17212b;font-size:17px}.title{font-size:28px;font-weight:bold}.sub{font-size:21px;font-weight:bold}.small{font-size:14px}.warn{fill:#a64000}
+.board{fill:url(#grid);stroke:#425569;stroke-width:3}.part{fill:#eef3f7;stroke:#425569;stroke-width:2}.tp{fill:#fff5cc;stroke:#a86e00;stroke-width:2}
+.p3{fill:none;stroke:#d23b32;stroke-width:6}.gnd{fill:none;stroke:#243746;stroke-width:6}.sig{fill:none;stroke:#176b5b;stroke-width:5}.pad{fill:#fff;stroke:#425569;stroke-width:2}.note{fill:#f8fafc;stroke:#aab7c4;stroke-width:1.5}
+</style>
+<text x="45" y="46" class="title">光送信基板の配置イメージ / Optical-board placement Rev.B</text>
+<text x="45" y="77" class="warn">推奨候補 AE-3G（72×47.5 mm、2.54 mm、両面スルーホール）を想定した概念図</text>
+<text x="45" y="103" class="small">穴番号やPLT固定脚の加工を確定する実装図ではない。実物とメーカー寸法図を照合して更新する。</text>
+<text x="70" y="155" class="sub">部品面（上から）</text>
+<rect x="70" y="175" width="600" height="390" rx="6" class="board"/>
+<circle cx="92" cy="197" r="9" class="pad"/><circle cx="648" cy="197" r="9" class="pad"/><circle cx="92" cy="543" r="9" class="pad"/><circle cx="648" cy="543" r="9" class="pad"/>
+<rect x="98" y="265" width="110" height="140" class="part"/><text x="112" y="291">J1 · Nano</text><text x="112" y="323">1 3V3</text><text x="112" y="353">2 GND</text><text x="112" y="383">3 SPDIF</text>
+<rect x="248" y="355" width="120" height="54" class="part"/><text x="264" y="388">JP1 OPEN</text>
+<rect x="270" y="265" width="72" height="58" class="part"/><text x="292" y="300">C2</text>
+<rect x="430" y="425" width="50" height="55" class="part"/><text x="440" y="458">R1</text>
+<rect x="446" y="350" width="70" height="58" class="part"/><text x="468" y="386">C1</text>
+<rect x="520" y="270" width="135" height="170" class="part"/><text x="538" y="300">U1 · PLT133</text><text x="538" y="327" class="small">光口を外向き</text><text x="538" y="415" class="small">→ TOSLINK</text>
+<rect x="235" y="205" width="100" height="45" rx="7" class="tp"/><text x="247" y="233">TP1 3V3</text>
+<rect x="360" y="205" width="105" height="45" rx="7" class="tp"/><text x="372" y="233">TP3 SRC</text>
+<rect x="300" y="465" width="115" height="45" rx="7" class="tp"/><text x="312" y="493">TP2 GND</text>
+<rect x="500" y="465" width="115" height="45" rx="7" class="tp"/><text x="512" y="493">TP4 VIN</text>
+<text x="97" y="532" class="small">コネクター側</text><text x="527" y="532" class="small">光ケーブル側</text>
+<text x="830" y="155" class="sub">配線面（部品面から透視）</text>
+<rect x="830" y="175" width="600" height="390" rx="6" class="board"/>
+<circle cx="852" cy="197" r="9" class="pad"/><circle cx="1408" cy="197" r="9" class="pad"/><circle cx="852" cy="543" r="9" class="pad"/><circle cx="1408" cy="543" r="9" class="pad"/>
+<path d="M875 270 H1370" class="p3"/><path d="M875 490 H1370" class="gnd"/><path d="M875 380 H1010 M1080 380 H1330" class="sig"/>
+<circle cx="875" cy="270" r="9" class="pad"/><circle cx="875" cy="380" r="9" class="pad"/><circle cx="875" cy="490" r="9" class="pad"/>
+<text x="842" y="253" class="small">J1-1</text><text x="842" y="365" class="small">J1-3</text><text x="842" y="520" class="small">J1-2</text>
+<circle cx="1010" cy="380" r="9" class="pad"/><circle cx="1080" cy="380" r="9" class="pad"/><text x="1015" y="355">JP1</text>
+<path d="M1035 270 V307" class="p3"/><path d="M1035 325 V490" class="gnd"/><path d="M1020 307 H1050 M1020 325 H1050" class="sig"/><text x="950" y="319">C2</text>
+<path d="M1175 380 V421" class="sig"/><path d="M1175 463 V490" class="gnd"/><rect x="1161" y="421" width="28" height="42" class="part"/><text x="1200" y="450">R1 10 kΩ</text>
+<path d="M1260 270 V307" class="p3"/><path d="M1260 325 V490" class="gnd"/><path d="M1245 307 H1275 M1245 325 H1275" class="sig"/><text x="1285" y="321">C1 0.1 µF</text>
+<circle cx="1330" cy="380" r="9" class="pad"/><circle cx="1370" cy="270" r="9" class="pad"/><circle cx="1370" cy="490" r="9" class="pad"/>
+<text x="1295" y="405">U1-1 Vin</text><text x="1325" y="253">U1-2</text><text x="1325" y="520">U1-3</text>
+<path d="M900 270 V218" class="p3" stroke-dasharray="8 6"/><path d="M1115 490 V535" class="gnd" stroke-dasharray="8 6"/><path d="M990 380 V218 M1140 380 V535" class="sig" stroke-dasharray="8 6"/>
+<text x="870" y="215" class="small">TP1</text><text x="1085" y="548" class="small">TP2</text><text x="970" y="215" class="small">TP3</text><text x="1110" y="548" class="small">TP4</text>
+<rect x="70" y="610" width="1360" height="185" class="note"/>
+<text x="92" y="641" class="sub">配置の意図</text>
+<text x="92" y="675">• U1を右端へ置き、光ケーブルの抜差し荷重を基板端で受ける。</text>
+<text x="92" y="708">• C1をU1-2/U1-3の直近、C2を電源入口寄り、R1をVin–GND間へ置く。</text>
+<text x="92" y="741">• TP4 VINとTP2 GNDを近づけ、プローブのGNDリードを短くする。TP3でJP1前も比較する。</text>
+<text x="92" y="774">• 左右の取付穴周囲を空ける。裸線の交差を避け、信号線を短くする。</text>
+<rect x="70" y="825" width="1360" height="160" class="note"/>
+<text x="92" y="856" class="sub">実装前の停止点</text>
+<text x="92" y="890">AE-3Gの穴径は1 mm。U1の3電気端子と固定脚4/5が加工なしで入るとは未確認。</text>
+<text x="92" y="923">入らない場合は、メーカー寸法図に従う穴／長穴加工が必要。端子を曲げて合わせず、加工後のバリ・剥離を確認する。</text>
+<text x="92" y="956">配線面を実際に裏返して見ると左右が反転する。接続表とテスターの導通確認を正本とする。</text>
+<text x="70" y="1020" class="small">赤=3V3、濃紺=GND、緑=信号。NC端子4/5は電気的に接続しない。図面根拠: docs/spu-direct-build.md</text>
+</svg>
