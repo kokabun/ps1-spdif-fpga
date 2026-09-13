@@ -1,0 +1,518 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1250" viewBox="0 0 1600 1250" data-layout-revision="numbered-1" data-mode="enable">
+<title>図2｜出力の有効／無効を切り替える — 74LCX541FT単体試験</title><desc>共通の部品番号とブレッドボード穴番号による配置例。同じW番号が付いた接続先をジャンパ線1本で結ぶ。PS1は未接続。</desc><style>text {font-family: 'Hiragino Kaku Gothic ProN','Yu Gothic','Noto Sans CJK JP',sans-serif;} line {stroke-linecap:round;}</style>
+<rect x="0" y="0" width="1600" height="1250" rx="0" fill="#fff" stroke="#fff"/>
+<text x="35" y="47" font-size="31" fill="#182d41" text-anchor="start" font-weight="700">図2｜出力の有効／無効を切り替える</text>
+<text x="35" y="81" font-size="20" fill="#182d41" text-anchor="start" font-weight="400">PS1未接続・A1だけの評価用。同じ部品番号は、回路図・配置図・本文で同じ実物を表す。</text>
+<rect x="30" y="105" width="1540" height="61" rx="8" fill="#eef6fc" stroke="#b8d2e5"/>
+<text x="50" y="131" font-size="20" fill="#182d41" text-anchor="start" font-weight="700">この図の色付き部分を確認する。別図の部品は薄く表示している。</text>
+<text x="50" y="153" font-size="16" fill="#182d41" text-anchor="start" font-weight="400">R2＝部品番号　｜　IC 2＝IC端子番号　｜　A6＝ブレッドボードの列A・行6　｜　W番号＝配線1本</text>
+<rect x="325" y="183" width="810" height="949" rx="12" fill="#f8fafc" stroke="#839bab"/>
+<text x="345" y="216" font-size="21" fill="#182d41" text-anchor="start" font-weight="700">BB1  ブレッドボード中央部・上面</text>
+<text x="1112" y="216" font-size="16" fill="#182d41" text-anchor="end" font-weight="400">行1〜24を拡大</text>
+<rect x="686" y="237" width="89" height="854" rx="4" fill="#e8eef2" stroke="#e8eef2"/>
+<text x="376" y="256" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">1</text>
+<line x1="410" y1="250" x2="650" y2="250" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="250" x2="1070" y2="250" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="250" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="250" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="250" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="250" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="250" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="250" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="250" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="250" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="250" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="250" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="292" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">2</text>
+<line x1="410" y1="286" x2="650" y2="286" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="286" x2="1070" y2="286" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="286" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="286" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="286" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="286" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="286" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="286" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="286" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="286" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="286" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="286" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="328" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">3</text>
+<line x1="410" y1="322" x2="650" y2="322" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="322" x2="1070" y2="322" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="322" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="322" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="322" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="322" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="322" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="322" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="322" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="322" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="322" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="322" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="364" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">4</text>
+<line x1="410" y1="358" x2="650" y2="358" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="358" x2="1070" y2="358" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="358" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="358" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="358" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="358" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="358" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="358" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="358" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="358" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="358" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="358" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="400" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">5</text>
+<line x1="410" y1="394" x2="650" y2="394" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="394" x2="1070" y2="394" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="394" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="394" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="394" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="394" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="394" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="394" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="394" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="394" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="394" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="394" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="436" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">6</text>
+<line x1="410" y1="430" x2="650" y2="430" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="430" x2="1070" y2="430" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="430" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="430" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="430" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="430" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="430" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="430" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="430" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="430" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="430" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="430" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="472" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">7</text>
+<line x1="410" y1="466" x2="650" y2="466" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="466" x2="1070" y2="466" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="466" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="466" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="466" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="466" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="466" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="466" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="466" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="466" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="466" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="466" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="508" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">8</text>
+<line x1="410" y1="502" x2="650" y2="502" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="502" x2="1070" y2="502" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="502" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="502" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="502" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="502" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="502" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="502" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="502" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="502" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="502" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="502" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="544" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">9</text>
+<line x1="410" y1="538" x2="650" y2="538" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="538" x2="1070" y2="538" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="538" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="538" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="538" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="538" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="538" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="538" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="538" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="538" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="538" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="538" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="580" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">10</text>
+<line x1="410" y1="574" x2="650" y2="574" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="574" x2="1070" y2="574" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="574" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="574" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="574" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="574" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="574" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="574" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="574" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="574" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="574" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="574" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="616" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">11</text>
+<line x1="410" y1="610" x2="650" y2="610" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="610" x2="1070" y2="610" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="610" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="610" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="610" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="610" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="610" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="610" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="610" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="610" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="610" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="610" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="652" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">12</text>
+<line x1="410" y1="646" x2="650" y2="646" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="646" x2="1070" y2="646" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="646" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="646" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="646" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="646" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="646" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="646" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="646" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="646" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="646" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="646" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="688" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">13</text>
+<line x1="410" y1="682" x2="650" y2="682" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="682" x2="1070" y2="682" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="682" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="682" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="682" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="682" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="682" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="682" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="682" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="682" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="682" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="682" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="724" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">14</text>
+<line x1="410" y1="718" x2="650" y2="718" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="718" x2="1070" y2="718" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="718" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="718" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="718" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="718" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="718" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="718" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="718" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="718" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="718" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="718" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="760" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">15</text>
+<line x1="410" y1="754" x2="650" y2="754" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="754" x2="1070" y2="754" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="754" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="754" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="754" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="754" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="754" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="754" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="754" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="754" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="754" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="754" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="796" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">16</text>
+<line x1="410" y1="790" x2="650" y2="790" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="790" x2="1070" y2="790" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="790" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="790" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="790" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="790" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="790" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="790" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="790" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="790" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="790" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="790" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="832" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">17</text>
+<line x1="410" y1="826" x2="650" y2="826" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="826" x2="1070" y2="826" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="826" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="826" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="826" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="826" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="826" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="826" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="826" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="826" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="826" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="826" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="868" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">18</text>
+<line x1="410" y1="862" x2="650" y2="862" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="862" x2="1070" y2="862" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="862" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="862" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="862" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="862" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="862" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="862" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="862" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="862" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="862" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="862" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="904" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">19</text>
+<line x1="410" y1="898" x2="650" y2="898" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="898" x2="1070" y2="898" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="898" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="898" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="898" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="898" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="898" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="898" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="898" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="898" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="898" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="898" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="940" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">20</text>
+<line x1="410" y1="934" x2="650" y2="934" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="934" x2="1070" y2="934" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="934" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="934" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="934" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="934" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="934" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="934" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="934" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="934" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="934" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="934" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="976" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">21</text>
+<line x1="410" y1="970" x2="650" y2="970" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="970" x2="1070" y2="970" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="970" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="970" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="970" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="970" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="970" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="970" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="970" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="970" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="970" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="970" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="1012" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">22</text>
+<line x1="410" y1="1006" x2="650" y2="1006" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="1006" x2="1070" y2="1006" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="1006" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="1006" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="1006" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="1006" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="1006" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="1006" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="1006" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="1006" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="1006" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="1006" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="1048" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">23</text>
+<line x1="410" y1="1042" x2="650" y2="1042" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="1042" x2="1070" y2="1042" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="1042" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="1042" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="1042" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="1042" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="1042" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="1042" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="1042" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="1042" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="1042" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="1042" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="376" y="1084" font-size="16" fill="#4e6475" text-anchor="end" font-weight="400">24</text>
+<line x1="410" y1="1078" x2="650" y2="1078" stroke="#cedce5" stroke-width="4"/>
+<line x1="830" y1="1078" x2="1070" y2="1078" stroke="#cedce5" stroke-width="4"/>
+<circle cx="410" cy="1078" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="470" cy="1078" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="530" cy="1078" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="590" cy="1078" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="650" cy="1078" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="830" cy="1078" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="890" cy="1078" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="950" cy="1078" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1010" cy="1078" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<circle cx="1070" cy="1078" r="5" fill="#fff" stroke="#8096a7" stroke-width="1.6"/>
+<text x="410" y="237" font-size="17" fill="#182d41" text-anchor="middle" font-weight="700">A</text>
+<text x="470" y="237" font-size="17" fill="#182d41" text-anchor="middle" font-weight="700">B</text>
+<text x="530" y="237" font-size="17" fill="#182d41" text-anchor="middle" font-weight="700">C</text>
+<text x="590" y="237" font-size="17" fill="#182d41" text-anchor="middle" font-weight="700">D</text>
+<text x="650" y="237" font-size="17" fill="#182d41" text-anchor="middle" font-weight="700">E</text>
+<text x="830" y="237" font-size="17" fill="#182d41" text-anchor="middle" font-weight="700">F</text>
+<text x="890" y="237" font-size="17" fill="#182d41" text-anchor="middle" font-weight="700">G</text>
+<text x="950" y="237" font-size="17" fill="#182d41" text-anchor="middle" font-weight="700">H</text>
+<text x="1010" y="237" font-size="17" fill="#182d41" text-anchor="middle" font-weight="700">I</text>
+<text x="1070" y="237" font-size="17" fill="#182d41" text-anchor="middle" font-weight="700">J</text>
+<text x="735" y="1015" font-size="17" fill="#647e92" text-anchor="middle" font-weight="400">中央溝</text>
+<text x="735" y="1042" font-size="17" fill="#647e92" text-anchor="middle" font-weight="400">左右は別</text>
+<text x="345" y="1115" font-size="16" fill="#182d41" text-anchor="start" font-weight="400">同じ行のA〜E／F〜Jは各5穴が導通。25〜30行と外側の電源レールは省略。</text>
+<g data-part="AD1" data-holes="D5,D6,D7,D8,D9,D10,D11,D12,D13,D14,H5,H6,H7,H8,H9,H10,H11,H12,H13,H14">
+<rect x="577" y="379" width="386" height="354" rx="8" fill="#eaf0f5" stroke="#617e94"/>
+<circle cx="590" cy="394" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<circle cx="950" cy="394" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<text x="601" y="399" font-size="16" fill="#182d41" text-anchor="start" font-weight="400">1 /OE1</text>
+<text x="939" y="399" font-size="16" fill="#182d41" text-anchor="end" font-weight="400">20 VCC</text>
+<circle cx="590" cy="430" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<circle cx="950" cy="430" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<text x="601" y="435" font-size="16" fill="#182d41" text-anchor="start" font-weight="400">2 A1</text>
+<text x="939" y="435" font-size="16" fill="#182d41" text-anchor="end" font-weight="400">19 /OE2</text>
+<circle cx="590" cy="466" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<circle cx="950" cy="466" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<text x="601" y="471" font-size="16" fill="#182d41" text-anchor="start" font-weight="400">3 A2</text>
+<text x="939" y="471" font-size="16" fill="#182d41" text-anchor="end" font-weight="400">18 Y1</text>
+<circle cx="590" cy="502" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<circle cx="950" cy="502" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<text x="601" y="507" font-size="16" fill="#182d41" text-anchor="start" font-weight="400">4 A3</text>
+<text x="939" y="507" font-size="16" fill="#182d41" text-anchor="end" font-weight="400">17 Y2</text>
+<circle cx="590" cy="538" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<circle cx="950" cy="538" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<text x="601" y="543" font-size="16" fill="#182d41" text-anchor="start" font-weight="400">5 A4</text>
+<text x="939" y="543" font-size="16" fill="#182d41" text-anchor="end" font-weight="400">16 Y3</text>
+<circle cx="590" cy="574" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<circle cx="950" cy="574" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<text x="601" y="579" font-size="16" fill="#182d41" text-anchor="start" font-weight="400">6 A5</text>
+<text x="939" y="579" font-size="16" fill="#182d41" text-anchor="end" font-weight="400">15 Y4</text>
+<circle cx="590" cy="610" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<circle cx="950" cy="610" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<text x="601" y="615" font-size="16" fill="#182d41" text-anchor="start" font-weight="400">7 A6</text>
+<text x="939" y="615" font-size="16" fill="#182d41" text-anchor="end" font-weight="400">14 Y5</text>
+<circle cx="590" cy="646" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<circle cx="950" cy="646" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<text x="601" y="651" font-size="16" fill="#182d41" text-anchor="start" font-weight="400">8 A7</text>
+<text x="939" y="651" font-size="16" fill="#182d41" text-anchor="end" font-weight="400">13 Y6</text>
+<circle cx="590" cy="682" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<circle cx="950" cy="682" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<text x="601" y="687" font-size="16" fill="#182d41" text-anchor="start" font-weight="400">9 A8</text>
+<text x="939" y="687" font-size="16" fill="#182d41" text-anchor="end" font-weight="400">12 Y7</text>
+<circle cx="590" cy="718" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<circle cx="950" cy="718" r="5" fill="#d8e4ee" stroke="#607b90" stroke-width="2"/>
+<text x="601" y="723" font-size="16" fill="#182d41" text-anchor="start" font-weight="400">10 GND</text>
+<text x="939" y="723" font-size="16" fill="#182d41" text-anchor="end" font-weight="400">11 Y8</text>
+<circle cx="591" cy="385" r="3" fill="#182d41" stroke="#182d41" stroke-width="1"/>
+<text x="770" y="421" font-size="16" fill="#182d41" text-anchor="middle" font-weight="400">↑ 1番マーク側</text>
+<rect x="706" y="498" width="128" height="74" rx="6" fill="#fff" stroke="#6e879a"/>
+<text x="770" y="528" font-size="26" fill="#182d41" text-anchor="middle" font-weight="700">U1</text>
+<text x="770" y="552" font-size="15" fill="#182d41" text-anchor="middle" font-weight="400">74LCX541FT</text>
+<text x="770" y="609" font-size="24" fill="#182d41" text-anchor="middle" font-weight="700">AD1</text>
+<text x="770" y="638" font-size="18" fill="#182d41" text-anchor="middle" font-weight="400">AE-SSOP20</text>
+<text x="770" y="664" font-size="15" fill="#182d41" text-anchor="middle" font-weight="400">0.65 mm側</text>
+<text x="770" y="698" font-size="16" fill="#182d41" text-anchor="middle" font-weight="400">D列 / H列</text>
+</g>
+<g data-part="R2" data-holes="A2,A6" opacity="0.45">
+<line x1="410" y1="286" x2="410" y2="430" stroke="#c5cfd7" stroke-width="3"/>
+<rect x="389" y="335" width="42" height="46" rx="5" fill="#fff7dd" stroke="#c5cfd7"/>
+<text x="410" y="364" font-size="18" fill="#c5cfd7" text-anchor="middle" font-weight="700">R2</text>
+<circle cx="410" cy="286" r="6" fill="#fff" stroke="#c5cfd7" stroke-width="2.4"/>
+<circle cx="410" cy="430" r="6" fill="#fff" stroke="#c5cfd7" stroke-width="2.4"/>
+</g>
+<g data-part="R3" data-holes="B3,B6" opacity="0.45">
+<line x1="470" y1="322" x2="470" y2="430" stroke="#c5cfd7" stroke-width="3"/>
+<rect x="449" y="353" width="42" height="46" rx="5" fill="#fff7dd" stroke="#c5cfd7"/>
+<text x="470" y="382" font-size="18" fill="#c5cfd7" text-anchor="middle" font-weight="700">R3</text>
+<circle cx="470" cy="322" r="6" fill="#fff" stroke="#c5cfd7" stroke-width="2.4"/>
+<circle cx="470" cy="430" r="6" fill="#fff" stroke="#c5cfd7" stroke-width="2.4"/>
+</g>
+<g data-part="R4" data-holes="I7,I17" opacity="0.45">
+<line x1="1010" y1="466" x2="1010" y2="537" stroke="#c5cfd7" stroke-width="3"/>
+<line x1="1010" y1="537" x2="1035" y2="548" stroke="#c5cfd7" stroke-width="3"/>
+<line x1="1035" y1="548" x2="1035" y2="811" stroke="#c5cfd7" stroke-width="3"/>
+<line x1="1035" y1="811" x2="1010" y2="826" stroke="#c5cfd7" stroke-width="3"/>
+<rect x="989" y="491" width="42" height="46" rx="5" fill="#fff7dd" stroke="#c5cfd7"/>
+<text x="1010" y="520" font-size="18" fill="#c5cfd7" text-anchor="middle" font-weight="700">R4</text>
+<circle cx="1010" cy="466" r="6" fill="#fff" stroke="#c5cfd7" stroke-width="2.4"/>
+<circle cx="1010" cy="826" r="6" fill="#fff" stroke="#c5cfd7" stroke-width="2.4"/>
+</g>
+<g data-part="R5" data-holes="F17,F21" opacity="0.45">
+<line x1="830" y1="826" x2="830" y2="970" stroke="#c5cfd7" stroke-width="3"/>
+<rect x="809" y="875" width="42" height="46" rx="5" fill="#fff7dd" stroke="#c5cfd7"/>
+<text x="830" y="904" font-size="18" fill="#c5cfd7" text-anchor="middle" font-weight="700">R5</text>
+<circle cx="830" cy="826" r="6" fill="#fff" stroke="#c5cfd7" stroke-width="2.4"/>
+<circle cx="830" cy="970" r="6" fill="#fff" stroke="#c5cfd7" stroke-width="2.4"/>
+</g>
+<g data-part="R6" data-holes="C1,C5" opacity="1">
+<line x1="530" y1="250" x2="530" y2="394" stroke="#7950a0" stroke-width="3"/>
+<rect x="509" y="299" width="42" height="46" rx="5" fill="#fff7dd" stroke="#7950a0"/>
+<text x="530" y="328" font-size="18" fill="#7950a0" text-anchor="middle" font-weight="700">R6</text>
+<circle cx="530" cy="250" r="6" fill="#fff" stroke="#7950a0" stroke-width="2.4"/>
+<circle cx="530" cy="394" r="6" fill="#fff" stroke="#7950a0" stroke-width="2.4"/>
+</g>
+<g data-part="C1" data-holes="J4,J5" opacity="0.45">
+<line x1="1070" y1="358" x2="1070" y2="394" stroke="#c5cfd7" stroke-width="3"/>
+<rect x="1049" y="364" width="42" height="24" rx="4" fill="#fff2e9" stroke="#c5cfd7"/>
+<text x="1070" y="382" font-size="17" fill="#c5cfd7" text-anchor="middle" font-weight="700">C1</text>
+<circle cx="1070" cy="358" r="6" fill="#fff" stroke="#c5cfd7" stroke-width="2.4"/>
+<circle cx="1070" cy="394" r="6" fill="#fff" stroke="#c5cfd7" stroke-width="2.4"/>
+</g>
+<g data-wire="W10" data-holes="A5,I6" data-to="共通/OE">
+<circle cx="410" cy="394" r="8" fill="#fff" stroke="#7950a0" stroke-width="3"/>
+<text x="410" y="381" font-size="14" fill="#7950a0" text-anchor="middle" font-weight="700">W10</text>
+<circle cx="1010" cy="430" r="8" fill="#fff" stroke="#7950a0" stroke-width="3"/>
+<text x="1010" y="417" font-size="14" fill="#7950a0" text-anchor="middle" font-weight="700">W10</text>
+</g>
+<g data-part="JP_EN1" data-holes="J6,J15">
+<circle cx="1070" cy="430" r="7" fill="#fff" stroke="#7950a0" stroke-width="3"/>
+<line x1="1078" y1="430" x2="1086" y2="430" stroke="#7950a0" stroke-width="2"/>
+<text x="1090" y="435" font-size="12" fill="#7950a0" text-anchor="start" font-weight="400">JP_EN1</text>
+<circle cx="1070" cy="754" r="7" fill="#fff" stroke="#7950a0" stroke-width="3"/>
+<line x1="1078" y1="754" x2="1086" y2="754" stroke="#7950a0" stroke-width="2"/>
+<text x="1090" y="759" font-size="12" fill="#7950a0" text-anchor="start" font-weight="400">JP_EN1</text>
+</g>
+<rect x="30" y="186" width="271" height="238" rx="8" fill="#f5f8fb" stroke="#c4d0d9"/>
+<text x="48" y="218" font-size="21" fill="#182d41" text-anchor="start" font-weight="700">MOD1  Tang Nano 9K</text>
+<text x="48" y="249" font-size="17" fill="#182d41" text-anchor="start" font-weight="400">ブレッドボードの外に置く</text>
+<text x="48" y="281" font-size="18" fill="#182d41" text-anchor="start" font-weight="400">3V3 / GND → 図1</text>
+<text x="48" y="313" font-size="18" fill="#182d41" text-anchor="start" font-weight="400">FPGA29（J5-9）</text>
+<line x1="62" y1="347" x2="115" y2="347" stroke="#1366a0" stroke-width="3"/>
+<rect x="115" y="331" width="70" height="32" rx="5" fill="#fff7dd" stroke="#1366a0"/>
+<text x="150" y="353" font-size="20" fill="#1366a0" text-anchor="middle" font-weight="700">R1</text>
+<line x1="185" y1="347" x2="249" y2="347" stroke="#1366a0" stroke-width="3"/>
+<text x="48" y="391" font-size="17" fill="#182d41" text-anchor="start" font-weight="400">R1＝33 Ω、Nanoの直近</text>
+<text x="235" y="374" font-size="15" fill="#1366a0" text-anchor="middle" font-weight="700">W11</text>
+<rect x="30" y="443" width="271" height="360" rx="8" fill="#f5f8fb" stroke="#c4d0d9"/>
+<text x="48" y="479" font-size="23" fill="#182d41" text-anchor="start" font-weight="700">図の読み方</text>
+<text x="48" y="516" font-size="18" fill="#182d41" text-anchor="start" font-weight="400">○ が線を挿す穴</text>
+<text x="48" y="551" font-size="18" fill="#182d41" text-anchor="start" font-weight="400">W10などの番号を照合</text>
+<text x="48" y="586" font-size="18" fill="#182d41" text-anchor="start" font-weight="400">同じ番号の2点を</text>
+<text x="48" y="621" font-size="18" fill="#182d41" text-anchor="start" font-weight="400">ジャンパ線1本で結ぶ</text>
+<text x="48" y="690" font-size="17" fill="#182d41" text-anchor="start" font-weight="400">線の長い経路は省略。</text>
+<text x="48" y="722" font-size="17" fill="#182d41" text-anchor="start" font-weight="400">実物は絶縁ジャンパ線で</text>
+<text x="48" y="754" font-size="17" fill="#182d41" text-anchor="start" font-weight="400">端点同士を短く結ぶ。</text>
+<rect x="30" y="823" width="271" height="264" rx="8" fill="#fff5e9" stroke="#dab98b"/>
+<text x="48" y="860" font-size="20" fill="#182d41" text-anchor="start" font-weight="700">今回つながないもの</text>
+<text x="48" y="901" font-size="17" fill="#182d41" text-anchor="start" font-weight="400">PS1の全信号・電源</text>
+<text x="48" y="937" font-size="17" fill="#182d41" text-anchor="start" font-weight="400">光送信モジュール</text>
+<text x="48" y="973" font-size="17" fill="#182d41" text-anchor="start" font-weight="400">Nanoの入力25〜28</text>
+<text x="48" y="1009" font-size="17" fill="#182d41" text-anchor="start" font-weight="400">U1の未使用出力Y2〜Y8</text>
+<rect x="1160" y="186" width="410" height="592" rx="8" fill="#f7fafc" stroke="#c4d0d9"/>
+<text x="1180" y="219" font-size="23" fill="#182d41" text-anchor="start" font-weight="700">出力切替の接続先</text>
+<text x="1180" y="257" font-size="17" fill="#182d41" text-anchor="start" font-weight="700">R6</text>
+<text x="1290" y="257" font-size="15" fill="#182d41" text-anchor="start" font-weight="400">10 kΩ：C1–C5</text>
+<text x="1180" y="299" font-size="17" fill="#182d41" text-anchor="start" font-weight="700">W10</text>
+<text x="1290" y="299" font-size="15" fill="#182d41" text-anchor="start" font-weight="400">A5 ↔ I6 を線1本で結ぶ</text>
+<text x="1180" y="341" font-size="17" fill="#182d41" text-anchor="start" font-weight="700">JP_EN1</text>
+<text x="1290" y="341" font-size="15" fill="#182d41" text-anchor="start" font-weight="400">J6 ↔ J15 の着脱ジャンパ</text>
+<text x="1180" y="383" font-size="17" fill="#182d41" text-anchor="start" font-weight="700">初期状態</text>
+<text x="1290" y="383" font-size="15" fill="#182d41" text-anchor="start" font-weight="400">JP_EN1は取り付けない</text>
+<text x="1180" y="425" font-size="17" fill="#182d41" text-anchor="start" font-weight="700">外す</text>
+<text x="1290" y="425" font-size="15" fill="#182d41" text-anchor="start" font-weight="400">出力無効（/OEはHigh）</text>
+<text x="1180" y="467" font-size="17" fill="#182d41" text-anchor="start" font-weight="700">つなぐ</text>
+<text x="1290" y="467" font-size="15" fill="#182d41" text-anchor="start" font-weight="400">出力有効（/OEはLow）</text>
+<text x="1180" y="509" font-size="17" fill="#182d41" text-anchor="start" font-weight="700">IC 1 / 19</text>
+<text x="1290" y="509" font-size="15" fill="#182d41" text-anchor="start" font-weight="400">/OE1 / /OE2の2端子</text>
+<text x="1180" y="551" font-size="17" fill="#182d41" text-anchor="start" font-weight="700">W10の役割</text>
+<text x="1290" y="551" font-size="15" fill="#182d41" text-anchor="start" font-weight="400">この2端子を同じ状態にする</text>
+<text x="1180" y="593" font-size="17" fill="#182d41" text-anchor="start" font-weight="700">注意</text>
+<text x="1290" y="593" font-size="15" fill="#182d41" text-anchor="start" font-weight="400">/OEはICの電源スイッチではない</text>
+<text x="1180" y="635" font-size="17" fill="#182d41" text-anchor="start" font-weight="700">切替手順</text>
+<text x="1290" y="635" font-size="15" fill="#182d41" text-anchor="start" font-weight="400">input-buffer-test.mdを参照</text>
+<rect x="1160" y="795" width="410" height="337" rx="8" fill="#fff9f2" stroke="#dac5aa"/>
+<text x="1180" y="831" font-size="20" fill="#182d41" text-anchor="start" font-weight="700">C2：電源入口の＋と−の間</text>
+<g data-part="C2" data-nets="3V3,GND">
+<line x1="1200" y1="884" x2="1515" y2="884" stroke="#ba3535" stroke-width="3"/>
+<line x1="1200" y1="987" x2="1515" y2="987" stroke="#344354" stroke-width="3"/>
+<text x="1200" y="869" font-size="17" fill="#ba3535" text-anchor="start" font-weight="400">左＋  3V3</text>
+<text x="1200" y="1014" font-size="17" fill="#344354" text-anchor="start" font-weight="400">左−  GND</text>
+<line x1="1370" y1="884" x2="1370" y2="920" stroke="#ba3535" stroke-width="3"/>
+<line x1="1350" y1="920" x2="1390" y2="920" stroke="#182d41" stroke-width="3"/>
+<line x1="1350" y1="937" x2="1390" y2="937" stroke="#182d41" stroke-width="3"/>
+<line x1="1370" y1="937" x2="1370" y2="987" stroke="#344354" stroke-width="3"/>
+<rect x="1436" y="917" width="48" height="28" rx="5" fill="#ba3535" stroke="#ba3535"/>
+<text x="1460" y="937" font-size="18" fill="#fff" text-anchor="middle" font-weight="700">C2</text>
+<text x="1430" y="965" font-size="18" fill="#182d41" text-anchor="start" font-weight="400">1 µF</text>
+</g>
+<text x="1180" y="1055" font-size="17" fill="#182d41" text-anchor="start" font-weight="400">レールは5穴区画ごとに導通確認。</text>
+<text x="1180" y="1083" font-size="17" fill="#182d41" text-anchor="start" font-weight="400">使用区画と左右の同極性を橋渡し。</text>
+<text x="1180" y="1111" font-size="16" fill="#182d41" text-anchor="start" font-weight="400">電源レールの実物位置は本文を参照。</text>
+<rect x="30" y="1151" width="1540" height="74" rx="8" fill="#edf5f2" stroke="#b1cfc1"/>
+<text x="48" y="1180" font-size="19" fill="#182d41" text-anchor="start" font-weight="700">組立前はUSBを外す。AD1の1番マーク・各穴の導通を確認。部品の寸法は拡大表示で、実寸ではない。</text>
+<text x="48" y="1208" font-size="17" fill="#182d41" text-anchor="start" font-weight="400">端点以外で部品リード同士を触れさせない。R4の本体はIC寄りに置き、延びるリードは必要に応じて絶縁する。</text>
+</svg>

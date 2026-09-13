@@ -1,0 +1,12 @@
+# 入力バッファ測定のローカル保存先
+
+[English](README.en.md) / [コマンド付き測定手順](../../docs/input-buffer-measurement.md)
+
+このフォルダは本プロジェクト内の測定原本置き場。**このREADMEと英訳だけをGit管理し、各測定runはGit管理外**とする。実測データはまだない。
+
+- 手順書のコマンドで `ibuf-001/` などを作り、その中に `sessions/`、`analysis/`、`photos/`、`review/` と記録メモを置く。
+- 既存runを消したり上書きしたりしない。再測定は別名、別作業は別IDにする。
+- 元ZIPには波形CSV、画面PNG、設定・測定値の `manifest.json` が含まれる。
+- IP、シリアル、個人情報を記録メモへ入力しない。画像・メタデータ等は自動マスクされない。
+- 公開前確認とユーザーの承認後、必要なものだけ[公開エビデンス](../../docs/evidence/input-buffer/README.md)へコピーする。
+- `git add -f` で測定runを追加しない。Git管理外なので、原本のバックアップは別途行う。

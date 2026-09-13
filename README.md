@@ -17,6 +17,10 @@ SCPH-7000 / PU-20 (CXD2925Q)
 
 **まだPlayStationをFPGAへ接続しないでください。** [入力回路の評価案](docs/ps1-input-interface.md)では74LCX541FTを第一候補としましたが、負電圧・入力傾斜・電源遷移が未確認です。電気的適合を確認してから接続します。左右極性・Right-Justifiedのbit位置等は、その後のFPGA受信試験でも確定できます。音声形式のTBDと接続前の電気的条件を区別します。
 
+次の作業は[PS1未接続のLCX541単体試験](docs/input-buffer-test.md)です。端子番号付き配線図、Nano 9K専用の試験信号源、オシロスコープ（使用機：DHO914S）での手順を追加しました。Gowin実ビルド・書込み・入力基板の実測は未実施です。
+
+PCから1コマンドずつ測定・保存する手順は[DHO914S CLI測定手順](docs/input-buffer-measurement.md)を参照してください。元データは本リポジトリ内の`captures/input-buffer/`（各runはGit管理外）、公開確認済みの資料は[入力バッファのエビデンス](docs/evidence/input-buffer/README.md)へ分けて保存します。
+
 ## 現在の実装状況
 
 将来構想は[Parallel I/O接続型S/PDIFドングルの設計検討](docs/parallel-io-dongle.md)を参照してください。

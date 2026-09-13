@@ -1,0 +1,6 @@
+// Sipeed Tang_Nano_9k_3672_Schematic.pdf: U16 27MHz -> R26 -> FPGA pin 52.
+IO_LOC "clk_27m" 52;
+IO_PORT "clk_27m" IO_TYPE=LVCMOS33 PULL_MODE=NONE;
+// J5-9. TEST SOURCE OUTPUT, NOT the PS1 input or the optical transmitter input.
+IO_LOC "test_out" 29;
+IO_PORT "test_out" IO_TYPE=LVCMOS33 PULL_MODE=NONE DRIVE=4;

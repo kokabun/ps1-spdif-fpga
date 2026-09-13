@@ -17,6 +17,10 @@ SCPH-7000 / PU-20 (CXD2925Q)
 
 **Do not connect the PlayStation to the FPGA yet.** The [input-interface proposal](docs/ps1-input-interface.en.md) selects 74LCX541FT as the leading candidate, but negative excursions, input slew and supply transitions remain unverified. Establish electrical compatibility before connection. Channel polarity and Right-Justified bit positions can then be resolved during FPGA capture; they are separate from electrical connection prerequisites.
 
+Next: [standalone LCX541 testing with PS1 disconnected](docs/input-buffer-test.en.md). This adds numbered wiring, a separate Nano 9K test source and oscilloscope procedures (the instrument used here is a DHO914S). Gowin hardware builds, programming and input-board measurements have not been performed.
+
+See the [DHO914S CLI procedure](docs/input-buffer-measurement.en.md) for one-command-at-a-time capture. Originals stay in this repository under `captures/input-buffer/` (runs are Git-ignored); reviewed public material goes to the [input-buffer evidence index](docs/evidence/input-buffer/README.en.md).
+
 ## Current state
 
 See the [Parallel I/O S/PDIF dongle design study](docs/parallel-io-dongle.en.md)

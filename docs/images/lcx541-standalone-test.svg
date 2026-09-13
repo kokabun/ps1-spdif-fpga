@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="840" viewBox="0 0 1400 840">
+  <title>PS1未接続：74LCX541FTの単体試験配線</title>
+  <desc>Nano FPGA29からA1へ試験信号を入れ、CH2でTP_A、CH3でTP_Yを測定する。電源は3.3 V。出力有効ジャンパは最初に外す。PS1、光送信機、FPGA入力は未接続。</desc>
+  <style>
+    text { font-family: 'Hiragino Kaku Gothic ProN', 'Yu Gothic', 'Noto Sans CJK JP', sans-serif; fill: #172334; font-size: 20px; }
+    .title { font-size: 30px; font-weight: bold; }
+    .sub { font-size: 18px; }
+    .head { font-size: 23px; font-weight: bold; }
+    .wire { stroke: #245e96; stroke-width: 3; fill: none; }
+    .part { stroke: #172334; stroke-width: 2; fill: white; }
+    .panel { stroke: #b1c2d3; fill: #f6f9fc; rx: 12; }
+    .dot { fill: #245e96; }
+  </style>
+  <rect width="1400" height="840" fill="white"/>
+  <text class="title" x="35" y="45">74LCX541FT — 単体試験（PS1は接続しない）</text>
+  <text x="35" y="78">R1〜R6・C1/C2・U1は配置図と共通の部品番号。（ ）内はIC端子番号。</text>
+  <rect class="panel" x="25" y="100" width="1350" height="330"/>
+  <text class="head" x="45" y="138">信号の通り道：Nanoの試験信号 → LCX541 → オシロスコープで測る</text>
+  <rect class="part" x="45" y="180" width="180" height="100"/>
+  <text x="60" y="210">Tang Nano 9K</text><text x="60" y="242">FPGA29 / J5-9</text><text class="sub" x="60" y="267">試験信号の出口</text>
+  <path class="wire" d="M225 235 H265 M335 235 H395 M465 235 H675 M905 235 H965 M1035 235 H1290"/>
+  <rect class="part" x="265" y="223" width="70" height="24"/>
+  <text x="265" y="201">R1 33Ω</text><text class="sub" x="254" y="290">Nanoのすぐ近く</text>
+  <rect class="part" x="395" y="223" width="70" height="24"/>
+  <text x="378" y="175">R2 100Ω</text><text class="sub" x="379" y="201">ICのすぐ近く</text>
+  <circle class="dot" cx="545" cy="235" r="5"/><text x="508" y="213">TP1 / TP_A</text>
+  <text class="sub" x="508" y="181">入力を測る：CH2</text>
+  <path class="wire" d="M545 235 V295 M545 345 V385"/>
+  <rect class="part" x="533" y="295" width="24" height="50"/>
+  <text class="sub" x="573" y="313">R3</text><text class="sub" x="573" y="338">100kΩ</text><text x="523" y="410">GND</text>
+  <rect class="part" x="675" y="170" width="230" height="150"/>
+  <text class="head" x="687" y="205" style="font-size:21px">U1 74LCX541FT</text>
+  <text x="690" y="243">A1 (2)</text><text x="810" y="243">Y1 (18)</text>
+  <text class="sub" x="690" y="268">入力</text><text class="sub" x="810" y="268">出力</text>
+  <path d="M775 225 L795 235 L775 245 Z" fill="#245e96"/>
+  <text class="sub" x="690" y="304">VCC (20) / GND (10)</text>
+  <rect class="part" x="965" y="223" width="70" height="24"/>
+  <text x="945" y="175">R4 33Ω</text><text class="sub" x="954" y="201">ICのすぐ近く</text>
+  <circle class="dot" cx="1130" cy="235" r="5"/>
+  <text x="1155" y="210">TP2 / TP_Y</text><text class="sub" x="1135" y="181">出力を測る：CH3</text>
+  <text class="sub" x="1170" y="277">FPGA入力へは</text><text class="sub" x="1170" y="302">つながない</text>
+  <path class="wire" d="M1130 235 V295 M1130 345 V385"/>
+  <rect class="part" x="1118" y="295" width="24" height="50"/>
+  <text class="sub" x="1018" y="317">R5</text><text class="sub" x="1018" y="342">100kΩ</text><text x="1108" y="410">GND</text>
+  <rect class="panel" x="25" y="450" width="640" height="250"/>
+  <text class="head" x="45" y="486">電源：Nanoの3.3 Vのみ（5 V不可）</text>
+  <text x="45" y="530">3V3</text>
+  <path class="wire" d="M100 524 H600 M245 524 V565 M435 524 V565 M245 585 V641 M435 585 V641 M100 641 H600"/>
+  <circle class="dot" cx="245" cy="524" r="5"/><circle class="dot" cx="435" cy="524" r="5"/>
+  <path class="part" d="M227 565 H263 M227 585 H263 M417 565 H453 M417 585 H453"/>
+  <text class="sub" x="279" y="565">C1 0.1µF</text><text class="sub" x="279" y="590">ICのすぐ近く</text>
+  <text class="sub" x="465" y="581">C2 1µF</text>
+  <text x="528" y="514">VCC (20)</text><text x="503" y="671">GND (10)</text><text x="45" y="647">GND</text>
+  <text class="sub" x="45" y="685">GNDは共通につなぐ（電圧の基準：0 V）。</text>
+  <rect class="panel" x="685" y="450" width="690" height="250"/>
+  <text class="head" x="705" y="486">出力の切替：最初はジャンパを外す（無効）</text>
+  <text x="705" y="539">3V3</text>
+  <path class="wire" d="M760 534 H810 M880 534 H1195 M1050 534 V594 M1050 623 V660"/>
+  <rect class="part" x="810" y="522" width="70" height="24"/>
+  <text x="814" y="577">R6 10kΩ</text><circle class="dot" cx="1050" cy="534" r="5"/>
+  <text x="1205" y="539">/OE1 (1)</text><text x="1205" y="569">/OE2 (19)</text>
+  <path class="wire" d="M1195 534 V563 H1200"/>
+  <circle class="dot" cx="1050" cy="594" r="4"/><circle class="dot" cx="1050" cy="623" r="4"/>
+  <path class="part" d="M1050 623 L1075 593"/>
+  <text class="sub" x="1090" y="616">JP_EN1</text><text class="sub" x="1090" y="646">着脱ジャンパ</text><text x="1028" y="685">GND</text>
+  <text class="sub" x="705" y="642">GNDへつなぐと出力が有効。</text><text class="sub" x="705" y="673">/OEは入力の過電圧を防がない。</text>
+  <text class="head" x="35" y="739">未使用入力 A2–A8（3–9番）→ GND。未使用出力 Y2–Y8（17–11番）→ NC（何もつながない）。</text>
+  <text x="35" y="775">PS1・光送信モジュールの全配線を外す。配線変更前は電源OFF（USBを抜く）。</text>
+  <text class="sub" x="35" y="810">TP3/TP4＝共通GNDの測定点。AD1＝U1の変換基板。部品番号・配置は ps1-input-interface.md を参照。</text>
+</svg>

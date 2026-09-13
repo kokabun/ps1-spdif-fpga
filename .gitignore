@@ -17,3 +17,11 @@
 build/
 impl/
 synth/
+
+# 測定用Python環境と未確認の原本（READMEのみ共有）
+/.venv/
+/captures/*
+!/captures/input-buffer/
+/captures/input-buffer/*
+!/captures/input-buffer/README.md
+!/captures/input-buffer/README.en.md
