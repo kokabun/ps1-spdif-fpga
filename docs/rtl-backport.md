@@ -1,8 +1,8 @@
 # 直結PoCへの共通RTL修正の反映
 
-[English](rtl-backport.en.md) / [README](../README.md)
+[README](../README.md)
 
-2026-09-04。日本語を正本とする。
+2026-09-04。本書を正本とする。
 
 ## 出典と範囲
 

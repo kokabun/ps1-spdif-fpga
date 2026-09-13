@@ -1,8 +1,8 @@
 # DHO914S CLIによる入力バッファ単体試験と記録
 
-[English](input-buffer-measurement.en.md) / [試験概要・回路](input-buffer-test.md) / [公開エビデンス](evidence/input-buffer/README.md)
+[試験概要・回路](input-buffer-test.md) / [公開エビデンス](evidence/input-buffer/README.md)
 
-2026-09-13作成。日本語を正本とする。**実機未実施の手順書**。PS1も光送信モジュールも接続せず、LCX541出力をFPGA入力へ戻さない。
+2026-09-13作成。本書を正本とする。**実機未実施の手順書**。PS1も光送信モジュールも接続せず、LCX541出力をFPGA入力へ戻さない。
 
 ## 目次
 
@@ -97,7 +97,6 @@ python3.14 -m venv .venv
 captures/input-buffer/                 # READMEだけGit管理
 └── ibuf-001/                          # 1回の作業。以下はGit管理外
     ├── input-buffer-record.md         # 実測値・条件・判断を手書き
-    ├── input-buffer-record.en.md      # 必要に応じて翻訳
     ├── sessions/                      # オシロからの元ZIP
     ├── analysis/                      # 元ZIPからの解析MD・JSON
     ├── photos/                        # 配線写真の原本
@@ -129,10 +128,6 @@ mkdir -p "captures/input-buffer/$IBUF_RUN/sessions" "captures/input-buffer/$IBUF
 
 ```bash
 cp -n docs/templates/input-buffer-record.md "captures/input-buffer/$IBUF_RUN/input-buffer-record.md"
-```
-
-```bash
-cp -n docs/templates/input-buffer-record.en.md "captures/input-buffer/$IBUF_RUN/input-buffer-record.en.md"
 ```
 
 5. 誤って公開しないための除外設定を確認する。対象パスと適用規則が表示されること。表示されなければ測定データを保存する前に見直す。
@@ -665,7 +660,7 @@ mkdir -p "docs/evidence/input-buffer/$IBUF_RUN"
 cp -n "captures/input-buffer/$IBUF_RUN/review/s32-enabled-raw10k/screen.png" "docs/evidence/input-buffer/$IBUF_RUN/enabled.png"
 ```
 
-結果表は[記録用ひな形](templates/input-buffer-record.md)を基に公開用 `README.md` と必要に応じて `README.en.md` として作成し、[エビデンス一覧](evidence/input-buffer/README.md)へリンクする。未確認項目を落とさない。生のZIPや全CSVは自動的に追加せず、必要性・容量・公開範囲を個別に判断する。
+結果表は[記録用ひな形](templates/input-buffer-record.md)を基に公開用 `README.md` として作成し、[エビデンス一覧](evidence/input-buffer/README.md)へリンクする。未確認項目を落とさない。生のZIPや全CSVは自動的に追加せず、必要性・容量・公開範囲を個別に判断する。
 
 ```bash
 git status --short
@@ -678,5 +673,5 @@ git status --short
 
 - ツール0.3.0のREADME、CLI、`session.py` / `files.py` / `analyze.py`を確認した。保存先は固定されておらず、`--output` と `--markdown` / `--json` で本プロジェクト内を指定できる。親フォルダは先に作る必要がある。
 - **保存先変更のためのツール改修・改修依頼プロンプトは不要。** ツールリポジトリを変更せず使用する。OSや実行環境の書込み許可が必要な場合は、保存先制約とは分けて扱う。
-- 2026-09-13：日英それぞれ81個のコード枠のシェル構文とCLI引数、日英のCLI一致、関連文書の111個のローカルリンク・アンカーを確認した。模擬測定器で記載の11保存コマンド（最大100万点）と2解析コマンド、ツールとは別の作業ディレクトリへの相対・絶対パス保存、ZIP構成・点数を確認した。ツール既存の自動テスト49件も成功。模擬データは一時領域だけに置き、本プロジェクトの実測エビデンスには追加していない。
+- 2026-09-13：コード枠のシェル構文とCLI引数、関連文書のローカルリンク・アンカーを確認した。模擬測定器で記載の11保存コマンド（最大100万点）と2解析コマンド、ツールとは別の作業ディレクトリへの相対・絶対パス保存、ZIP構成・点数を確認した。ツール既存の自動テスト49件も成功。模擬データは一時領域だけに置き、本プロジェクトの実測エビデンスには追加していない。
 - DHO914S実機通信、設定の実適用、Gowin書込み、実物の波形・電圧、公開エビデンスの取得は未実施。成功した測定として記録しない。

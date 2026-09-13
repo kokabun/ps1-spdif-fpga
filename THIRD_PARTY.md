@@ -1,8 +1,8 @@
 # 出典とライセンス
 
-[English](THIRD_PARTY.en.md) / [README](README.md)
+[README](README.md)
 
-日本語を正本とする。本リポジトリは独自実装を含み、以下のプロジェクトからRTLをコピーしていません。
+本リポジトリは独自実装を含み、以下のプロジェクトからRTLをコピーしていません。
 
 ## puhitaku / YOTSUHACK `nintendo-switch-i2s-to-spdif`
 

@@ -46,5 +46,5 @@
 <text x="45" y="881" class="small">● = 接続 / junction. 交差のみは未接続 / crossings without dots are not connected. ピン位置は実装形状ではない。</text>
 <text x="45" y="910">C1はU1のVcc–GND直近。C2の＋は3V3。JP1は初期OPEN、電源OFFで操作。</text>
 <text x="45" y="939" class="small">C1 adjacent to U1; C2 positive to 3V3. JP1 defaults open; change only with power off.</text>
-<text x="45" y="970" class="small">JP1は自動保護ではない。出典・部材・検証条件: docs/spu-direct-build.md / .en.md</text>
+<text x="45" y="970" class="small">JP1は自動保護ではない。出典・部材・検証条件: docs/spu-direct-build.md</text>
 </svg>

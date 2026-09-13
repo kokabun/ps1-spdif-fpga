@@ -2,8 +2,6 @@
 
 > 実施順序（2026-09-04）：[SPU直結からPIOへ移行する計画](docs/direct-to-pio-plan.md)を参照してください。まずPIOを使わず直結で検証し、その後にPIOへ移行します。[共通RTL修正と検証結果](docs/rtl-backport.md)を本ブランチへ反映しました。実機は未検証です。
 
-[English translation / 英訳](README.en.md)
-
 [SPU直結の暫定回路図・秋月購入リスト](docs/spu-direct-build.md)を追加しました。PS1側の測定を開始しましたが、電気的な適合性は未確認・施工不可です。
 
 以下の構成を対象とする概念実証（PoC）です。
@@ -80,6 +78,7 @@ ICの向きと導通を確認してください。基板写真だけからpin番
 3.3 V I/O bankに属します。ただし、これはPS1側信号が3.3 V互換であることを証明する
 ものではありません。
 
+<a id="pu20-audio-evidence-2026-09-06"></a>
 ### LRCO / BCKO / DATO / MCLK測定のエビデンス（2026-09-06）
 
 対象はSCPH-7000 / PU-20。測定者申告の取り出し点は、[ConsoleModsの700x向け手順](https://consolemods.org/wiki/PS1:Digital_Audio_(SPDIF)_Mod)にあるDAC側LRCK/BCK/MCLK点と、手順5の写真で示された基板GND点。
@@ -246,5 +245,3 @@ overshootがabsolute maximumを超える場合は、level translatorが必須で
 を参照しました。同リポジトリ全体はMITですが、Ultra-Embedded由来のS/PDIF RTLは
 GPL-2.0-or-laterです。本リポジトリにはそのRTLをコピーしていません。正確な出典、
 license、Sipeed公式資料については[`THIRD_PARTY.md`](THIRD_PARTY.md)を参照してください。
-
-内容が競合する場合は、この日本語版を正本として優先します。

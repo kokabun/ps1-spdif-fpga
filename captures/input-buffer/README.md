@@ -1,8 +1,8 @@
 # 入力バッファ測定のローカル保存先
 
-[English](README.en.md) / [コマンド付き測定手順](../../docs/input-buffer-measurement.md)
+[コマンド付き測定手順](../../docs/input-buffer-measurement.md)
 
-このフォルダは本プロジェクト内の測定原本置き場。**このREADMEと英訳だけをGit管理し、各測定runはGit管理外**とする。実測データはまだない。
+このフォルダは本プロジェクト内の測定原本置き場。**このREADMEだけをGit管理し、各測定runはGit管理外**とする。実測データはまだない。
 
 - 手順書のコマンドで `ibuf-001/` などを作り、その中に `sessions/`、`analysis/`、`photos/`、`review/` と記録メモを置く。
 - 既存runを消したり上書きしたりしない。再測定は別名、別作業は別IDにする。
